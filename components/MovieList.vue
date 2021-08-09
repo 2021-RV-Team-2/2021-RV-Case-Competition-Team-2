@@ -1,13 +1,13 @@
 <template>
- <div class='movieList'>
+ <div class='movieList container'>
     <Search/>
     <h1 @click="movieList()">Movie List</h1>
-    <div class="latestMovies">
-        <div v-for="movie in latestMovies" :key="movie.id" class="movieWrapper">
-            <div class="movieTitle">
+    <div class="latestMovies row">
+        <div v-for="movie in latestMovies" :key="movie.id" class="col-md-2">
+            <div class="movieTitle text-truncate">
                 {{movie.title}}
             </div>
-            <div class="movieImage">
+            <div class="movieImage text-center">
                 <img v-bind:src="'http://image.tmdb.org/t/p/w500/' + movie.poster_path" width='100px'>
             </div>
         </div>
@@ -45,5 +45,4 @@ export default {
 }
 </script>
 <style scoped>
-
 </style>
