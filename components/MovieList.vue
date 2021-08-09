@@ -59,7 +59,7 @@ export default {
     }
    }
  },
- fetch () {
+ mounted () {
     this.movieList();
  }
 }
