@@ -1,4 +1,7 @@
 {
+  "MovieList": {
+    "description": "Auto imported from components/MovieList.vue"
+  },
   "NuxtLogo": {
     "description": "Auto imported from components/NuxtLogo.vue"
   },
