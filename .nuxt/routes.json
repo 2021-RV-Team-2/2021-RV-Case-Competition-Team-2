@@ -1,0 +1,16 @@
+[
+  {
+    "name": "search",
+    "path": "/search",
+    "component": "/Users/nsantini/Documents/GitHub/2021-RV-Case-Competition-Team-2/pages/search/index.vue",
+    "chunkName": "pages/search/index",
+    "_name": "_c370a61e"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/Users/nsantini/Documents/GitHub/2021-RV-Case-Competition-Team-2/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_257bc7fc"
+  }
+]
