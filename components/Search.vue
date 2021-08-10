@@ -5,7 +5,10 @@
   </form>
   <div v-show="showResults" class="menu-item">
     <ul class="searchMenu">
-        <li v-for='result in results' :key='result.id'><router-link class="menu-item" :to="{path: '/movies/MovieListing', query: { movieId: result.id }, force: true}" replace>{{result.title}}</router-link></li>
+        <li v-for='result in results' :key='result.id'>
+            <span v-if="result.media_type === 'movie'"><NuxtLink class="menu-item" :to="{path: '/movies/MovieListing', query: { movieId: result.id }, force: true}">{{result.title}}</NuxtLink></span>
+            <!-- <span v-else-if="result.media_type === 'tv'"><NuxtLink class="menu-item" :to="{path: '/tv/tvshows', query: { tvId: result.id }, force: true}">{{result.title}}</NuxtLink></span> -->
+        </li>
     </ul>
   </div>
  </div>
@@ -26,7 +29,7 @@ export default {
  methods: {
   getResult(query) {
     try {
-        axios.get('https://api.themoviedb.org/3/search/movie?api_key=9d58e9e21ea356358536de769ffa2e06&query=' + query).then(response => { this.results = response.data.results })
+        axios.get('https://api.themoviedb.org/3/search/multi?api_key=9d58e9e21ea356358536de769ffa2e06&query=' + query).then(response => { this.results = response.data.results })
         console.log(this.results);
     } catch {
         console.log("ERROR IN SEARCH");
@@ -59,7 +62,7 @@ export default {
     z-index:1;
 }
 
-.menu-item a {
+.menu-item span a {
 	padding: 5px 0 5px 0;
 	text-decoration: none;
 	margin: 0 15px 0 15px;
@@ -94,7 +97,7 @@ export default {
     margin-left: 0;
     padding-left: 0;
 }
-.menu-item ul li a {
+.menu-item ul li span a {
     display:block;
 	font-size: 20px;
 	width: 100%;
