@@ -34,17 +34,21 @@
                             Box Office: {{ formatPrice(movie.revenue) }}
                         </div>
                         <h6>STREAM</h6>
-                        <div v-for="provider in providers_fr">
+                        <div v-for="provider in providers_fr" :key="provider.logo_path">
                             <img class="img-thumbnail service" v-bind:src="'http://image.tmdb.org/t/p/w200/' + provider.logo_path">
                         </div>
                         <h6>STREAM + BUY</h6>
-                        <div v-for="provider in providers_fr_buy">
+                        <div v-for="provider in providers_fr_buy" :key="provider.logo_path">
                             <img class="img-thumbnail service" v-bind:src="'http://image.tmdb.org/t/p/w200/' + provider.logo_path">
                         </div>
                         <h6>RENT</h6>
-                        <div v-for="provider in providers_rent">
+                        <div v-for="provider in providers_rent" :key="provider.logo_path">
                             <img class="img-thumbnail service" v-bind:src="'http://image.tmdb.org/t/p/w200/' + provider.logo_path">
                         </div>
+
+                        <iframe width="560" height="315" v-bind:src="findTrailer(videos)"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
                     </div>
                     
                 </div>
@@ -71,7 +75,11 @@ export default {
   return {
    query: '',
    results: '',
-   movie: ''
+   movie: '',
+   providers_fr: '',
+   providers_fr_buy: '',
+   providers_rent: '',
+   videos: '',
   }
  },
  mounted () {
@@ -79,9 +87,9 @@ export default {
         let movieId = this.$route.query.movieId;
         let movieString = 'https://api.themoviedb.org/3/movie/' + movieId + '?api_key=9d58e9e21ea356358536de769ffa2e06';
         let providerString = 'https://api.themoviedb.org/3/movie/' + movieId + '/watch/providers?api_key=9d58e9e21ea356358536de769ffa2e06';
-        axios.get(providerString).then(response => { this.providers_fr = response.data.results["US"]["flatrate"] });
-        axios.get(providerString).then(response => { this.providers_fr_buy = response.data.results["US"]["flatrate_and_buy"] });
-        axios.get(providerString).then(response => { this.providers_rent = response.data.results["US"]["rent"] });
+        let videosString = 'https://api.themoviedb.org/3/movie/' + movieId + '/videos?api_key=9d58e9e21ea356358536de769ffa2e06&language=en-US'
+        axios.get(providerString).then(response => { this.providers_fr = response.data.results["US"]["flatrate"],  this.providers_fr_buy = response.data.results["US"]["flatrate_and_buy"], this.providers_rent = response.data.results["US"]["rent"]});
+        axios.get(videosString).then(response => this.videos= response.data.results);
         console.log(movieId);
         axios.get(movieString).then(response => { this.movie = response.data });
     } catch {
@@ -94,6 +102,17 @@ export default {
     }
 },
  methods: {
+    findTrailer(results){
+        for (let i = 0, len = results.length; i < len; i++) {
+            let video = results[i];
+            let type = video["type"];
+            console.log(type);
+            if( type == "Trailer" ){
+                return "https://www.youtube.com/embed/" + video["key"];
+            }
+        }
+        return results[0];
+    },
     formatPrice(value) {
         let val = (value/1).toFixed(2).replace(',', '.')
         return '$' + val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
