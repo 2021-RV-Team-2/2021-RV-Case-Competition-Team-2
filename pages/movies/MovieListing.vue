@@ -33,6 +33,7 @@
                         <div class="boxOffice">
                             Box Office: {{ formatPrice(movie.revenue) }}
                         </div>
+                        <MovieReviews/>
                     </div>
                 </div>
             </div>
@@ -130,8 +131,6 @@ img {
     float: right;
 }
 .movieDescription {
-    height: 100px;
-    overflow-y:scroll;
     width:100%;
     float: none;
 }

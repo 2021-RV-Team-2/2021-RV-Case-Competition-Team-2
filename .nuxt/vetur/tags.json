@@ -11,6 +11,9 @@
   "MovieList": {
     "description": "Auto imported from components/MovieList.vue"
   },
+  "MovieReviews": {
+    "description": "Auto imported from components/MovieReviews.vue"
+  },
   "NuxtLogo": {
     "description": "Auto imported from components/NuxtLogo.vue"
   },
