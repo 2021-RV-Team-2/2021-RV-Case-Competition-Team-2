@@ -1,6 +1,6 @@
 <template>
  <div class='movieList container'>
-    <Search/>
+    <!--<Search/>-->
     <h1 @click="movieList()">Movie List</h1>
     <div class="latestMovies row">
         <div v-for="movie in latestMovies" :key="movie.id" class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
@@ -36,7 +36,7 @@
 </template>
 <script>
 import axios from 'axios'
-import Search from '@/components/Search'
+// import Search from '@/components/Search'
 
 export default {
  name: 'movieList',
