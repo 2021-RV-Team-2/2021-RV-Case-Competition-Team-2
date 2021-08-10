@@ -1,7 +1,7 @@
 <template>
  <div class='movieList container'>
     <!--<Search/>-->
-    <h1 @click="movieList()">Movie List</h1>
+    <h1 @click="movieList()" class="py-4 mx-auto text-center">DISCOVER NEW MOVIES</h1>
     <div class="latestMovies row">
         <div v-for="movie in latestMovies" :key="movie.id" class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
             <div class="movie">
@@ -66,6 +66,8 @@ export default {
 }
 </script>
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Roboto:wght@100;300;400;500;700&family=Montserrat:wght@500;700&display=swap');
+
 html, body {
     background: #000!important;
     color: #fff!important;
@@ -85,7 +87,7 @@ img {
     font-size: 12px;
 }
 .movieYear, .movieRating {
-    color: red;
+    color: #D1495B;
     font-weight: bold;
 }
 .movieYear {
@@ -101,7 +103,7 @@ img {
     float: none;
 }
 .learnMore {
-    background: red;
+    background: #D1495B;
     color: white;
     padding: 5px;
     border-radius: 4px;
@@ -112,5 +114,9 @@ img {
 .learnMore:hover {
     cursor:pointer;
     color: #fff;
+}
+h1 {
+    font-family: "Montserrat";
+    letter-spacing: .1rem;
 }
 </style>

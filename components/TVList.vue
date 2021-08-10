@@ -1,7 +1,7 @@
 <template>
  <div class='tvList container'>
     <!--<Search/>-->
-    <h1 @click="tvList()">TV List</h1>
+    <h1 @click="tvList()" class="py-4 mx-auto text-center">DISCOVER NEW TV SHOWS</h1>
     <div class="latestTV row">
         <div v-for="tv in latestTV" :key="tv.id" class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
             <div class="tv">
@@ -91,7 +91,7 @@ img {
     font-size: 12px;
 }
 .movieYear, .movieRating {
-    color: red;
+    color: #D1495B;
     font-weight: bold;
 }
 .movieYear {
@@ -107,7 +107,7 @@ img {
     float: none;
 }
 .learnMore {
-    background: red;
+    background: #D1495B;
     color: white;
     padding: 5px;
     border-radius: 4px;
@@ -118,5 +118,9 @@ img {
 .learnMore:hover {
     cursor:pointer;
     color: #fff;
+}
+h1 {
+    font-family: "Montserrat";
+    letter-spacing: .1rem;
 }
 </style>
