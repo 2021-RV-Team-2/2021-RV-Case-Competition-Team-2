@@ -11,7 +11,7 @@
                 <NuxtLink class="nav-link active" to="/movies">MOVIES</NuxtLink>
             </li>
             <li class="nav-item text-secondary px-4">
-                <a class="nav-link" href="#">TV SHOWS</a>
+               <NuxtLink class="nav-link" to="/tv">TV SHOWS</NuxtLink>
             </li>
             <li class="nav-item px-4">
                 <a class="nav-link" href="#">PROVIDERS</a>

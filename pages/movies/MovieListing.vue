@@ -1,12 +1,12 @@
 <template>
  <div class='movieList container'>
     <!--<Search/>-->
-    <h1 @click="movieList()">Movie List</h1>
-    <div class="latestMovies row">
-        <div v-for="movie in latestMovies" :key="movie.id" class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+    <h1>Movie</h1>
+    <div class="movieListing row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
             <div class="movie">
                 <div class="movieTitle text-truncate">
-                    <h3>{{movie.title}}</h3>
+                    <h3>{{ movie.title }}</h3>
                 </div>
                 <div class="row">
                     <div class="col-md-3 col-sm-12">
@@ -24,8 +24,14 @@
                         <div class="movieDescription">
                             {{ movie.overview }}
                         </div>
-                        <div>
-                            <NuxtLink class="learnMore" :to="{path: '/movies/MovieListing', query: { movieId: movie.id }}">Learn More</NuxtLink>
+                        <div class="runtime">
+                            Runtime: {{ duration(movie.runtime) }}
+                        </div>
+                        <div class="budget">
+                            Budget: {{ formatPrice(movie.budget) }}
+                        </div>
+                        <div class="boxOffice">
+                            Box Office: {{ formatPrice(movie.revenue) }}
                         </div>
                     </div>
                 </div>
@@ -34,33 +40,61 @@
     </div>
  </div>
 </template>
-<script>
+<script scope>
 import axios from 'axios'
 // import Search from '@/components/Search'
 
 export default {
- name: 'movieList',
+ name: 'movieListing',
  components: {
     // Search
  },
+ props: [
+
+ ],
  data () {
   return {
    query: '',
    results: '',
-   latestMovies: ''
+   movie: ''
   }
  },
- methods: {
-   movieList() {
+ mounted () {
     try {
-        axios.get('https://api.themoviedb.org/3/discover/movie?api_key=9d58e9e21ea356358536de769ffa2e06').then(response => { this.latestMovies = response.data.results })
+        let movieId = this.$route.query.movieId;
+        let movieString = 'https://api.themoviedb.org/3/movie/' + movieId + '?api_key=9d58e9e21ea356358536de769ffa2e06';
+        console.log(movieId);
+        axios.get(movieString).then(response => { this.movie = response.data });
     } catch {
         console.log("ERROR IN SEARCH");
     }
-   }
  },
- mounted () {
-    this.movieList();
+ filters: {
+    currency: function(value){
+        return "$" + Number.parseFloat(value).toFixed(2);
+    }
+},
+ methods: {
+    formatPrice(value) {
+        let val = (value/1).toFixed(2).replace(',', '.')
+        return '$' + val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    },
+    duration (value) {
+      const totalMinutes = value;
+      const hours = Math.floor(totalMinutes / 60);
+      const minutes = totalMinutes - (hours * 60);
+      return hours + ' hr ' + minutes + ' mins';
+    },
+//    movieListing() {
+//     try {
+//         let movieId = this.$route.query.movieId;
+//         let movieString = 'https://api.themoviedb.org/3/movie/' + movieId + '?api_key=9d58e9e21ea356358536de769ffa2e06';
+//         console.log(movieId);
+//         axios.get(movieString).then(response => { this.movie = response });
+//     } catch {
+//         console.log("ERROR IN SEARCH");
+//     }
+//    }
  },
  layout: 'default'
 }
@@ -74,7 +108,6 @@ img {
     max-width:100%;
 }
 .movie {
-    max-height: 300px;
     padding:10px;
     padding-bottom:20px;
     color:#000;
@@ -105,12 +138,9 @@ img {
     color: white;
     padding: 5px;
     border-radius: 4px;
-    margin-top:20px;
-    display:block;
-    width: 74px;
+    margin-top:10px;
 }
 .learnMore:hover {
     cursor:pointer;
-    color: #fff;
 }
 </style>

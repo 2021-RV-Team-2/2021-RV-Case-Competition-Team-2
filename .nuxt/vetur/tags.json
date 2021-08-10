@@ -8,6 +8,9 @@
   "Search": {
     "description": "Auto imported from components/Search.vue"
   },
+  "TVList": {
+    "description": "Auto imported from components/TVList.vue"
+  },
   "Tutorial": {
     "description": "Auto imported from components/Tutorial.vue"
   }

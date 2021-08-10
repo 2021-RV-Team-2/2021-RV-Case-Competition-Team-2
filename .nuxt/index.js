@@ -176,8 +176,9 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_plugin_09b9716a === 'function') {
-    await nuxt_plugin_plugin_09b9716a(app.context, inject)
+
+  if (typeof nuxt_plugin_plugin_273b3f1c === 'function') {
+    await nuxt_plugin_plugin_273b3f1c(app.context, inject)
   }
 
   // Lock enablePreview in context

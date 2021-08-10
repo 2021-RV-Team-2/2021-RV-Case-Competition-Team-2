@@ -9,4 +9,5 @@ You can directly use them in pages and other components without the need to impo
 - `<MovieList>` | `<movie-list>` (components/MovieList.vue)
 - `<NuxtLogo>` | `<nuxt-logo>` (components/NuxtLogo.vue)
 - `<Search>` | `<search>` (components/Search.vue)
+- `<TVList>` | `<t-v-list>` (components/TVList.vue)
 - `<Tutorial>` | `<tutorial>` (components/Tutorial.vue)

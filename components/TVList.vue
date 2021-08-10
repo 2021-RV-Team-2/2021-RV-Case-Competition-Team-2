@@ -1,31 +1,32 @@
 <template>
- <div class='movieList container'>
+ <div class='tvList container'>
     <!--<Search/>-->
-    <h1 @click="movieList()">Movie List</h1>
-    <div class="latestMovies row">
-        <div v-for="movie in latestMovies" :key="movie.id" class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
-            <div class="movie">
+    <h1 @click="tvList()">TV List</h1>
+    <div class="latestTV row">
+        <div v-for="tv in latestTV" :key="tv.id" class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+            <div class="tv">
                 <div class="movieTitle text-truncate">
-                    <h3>{{movie.title}}</h3>
+                    <h3>{{tv.name}}</h3>
                 </div>
                 <div class="row">
                     <div class="col-md-3 col-sm-12">
                         <div class="movieImage text-center">
-                            <img v-bind:src="'http://image.tmdb.org/t/p/w500/' + movie.poster_path">
+                            <img v-bind:src="'http://image.tmdb.org/t/p/w500/' + tv.poster_path">
                         </div>
                     </div>
                     <div class="col-md-9 col-sm-12">
                         <div class="movieYear">
-                            {{ movie.release_date }}
+                            {{ formatYear(tv.first_air_date) }}
                         </div>
                         <div class="movieRating float-end">
-                            {{ movie.vote_average }} ({{ movie.vote_count }} votes)
+                            {{ tv.vote_average }} ({{ tv.vote_count }} votes)
                         </div>
                         <div class="movieDescription">
-                            {{ movie.overview }}
+                            {{ tv.overview }}
                         </div>
+                        
                         <div>
-                            <NuxtLink class="learnMore" :to="{path: '/movies/MovieListing', query: { movieId: movie.id }}">Learn More</NuxtLink>
+                            <NuxtLink class="learnMore" :to="{path: '/tv/tvshows', query: { tvId: tv.id }}">Learn More</NuxtLink>
                         </div>
                     </div>
                 </div>
@@ -36,10 +37,11 @@
 </template>
 <script>
 import axios from 'axios'
+
 // import Search from '@/components/Search'
 
 export default {
- name: 'movieList',
+ name: 'tvList',
  components: {
     // Search
  },
@@ -47,25 +49,29 @@ export default {
   return {
    query: '',
    results: '',
-   latestMovies: ''
+   latestTV: ''
   }
  },
  methods: {
-   movieList() {
+   tvList() {
     try {
-        axios.get('https://api.themoviedb.org/3/discover/movie?api_key=9d58e9e21ea356358536de769ffa2e06').then(response => { this.latestMovies = response.data.results })
+        axios.get('https://api.themoviedb.org/3/discover/tv?api_key=9d58e9e21ea356358536de769ffa2e06').then(response => { this.latestTV = response.data.results })
     } catch {
         console.log("ERROR IN SEARCH");
     }
-   }
+   },
+   formatYear(value) {
+        return String(value).substring(0,4)
+    },
  },
  mounted () {
-    this.movieList();
+    this.tvList();
  },
+
  layout: 'default'
 }
 </script>
-<style scoped>
+<style>
 html, body {
     background: #000!important;
     color: #fff!important;
@@ -73,7 +79,7 @@ html, body {
 img {
     max-width:100%;
 }
-.movie {
+.tv {
     max-height: 300px;
     padding:10px;
     padding-bottom:20px;
