@@ -48,8 +48,8 @@
 
                         <iframe width="560" height="315" v-bind:src="findTrailer(videos)"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
-                    </div>
+                        <MovieReviews/>                    
+                     </div>
                     
                 </div>
             </div>
@@ -166,8 +166,6 @@ img {
     float: right;
 }
 .movieDescription {
-    height: 100px;
-    overflow-y:scroll;
     width:100%;
     float: none;
 }

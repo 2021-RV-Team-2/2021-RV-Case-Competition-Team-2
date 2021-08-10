@@ -31,6 +31,7 @@
                         <div class="runtime">
                             Episode Runtime: {{ duration(tv.episode_run_time) }}
                         </div>
+                        <TVReviews/>
                     </div>
                 </div>
             </div>
