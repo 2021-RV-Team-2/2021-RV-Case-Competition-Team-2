@@ -8,7 +8,7 @@
                         <div class="tvImage text-center">
                             <NuxtLink class="tvLink" :to="{path: '/tv/tvshows', query: { tvId: tv.id }}">
                                 <img v-bind:src="'http://image.tmdb.org/t/p/w500/' + tv.poster_path">
-                                <span class="tvTitle text-truncate">{{tv.title}}</span>
+                                <span class="tvTitle text-truncate">{{tv.name}}</span>
                             </NuxtLink>
                         </div>
                     </div>
