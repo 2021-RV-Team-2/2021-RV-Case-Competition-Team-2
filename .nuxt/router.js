@@ -4,10 +4,12 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _713be8cc = () => interopDefault(import('../pages/movies/index.vue' /* webpackChunkName: "pages/movies/index" */))
-const _c370a61e = () => interopDefault(import('../pages/search/index.vue' /* webpackChunkName: "pages/search/index" */))
-const _7b08fd6c = () => interopDefault(import('../pages/movies/MovieListing.vue' /* webpackChunkName: "pages/movies/MovieListing" */))
-const _257bc7fc = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _f4867e48 = () => interopDefault(import('../pages/movies/index.vue' /* webpackChunkName: "pages/movies/index" */))
+const _9a6ef5fe = () => interopDefault(import('../pages/search/index.vue' /* webpackChunkName: "pages/search/index" */))
+const _1e238371 = () => interopDefault(import('../pages/tvshows/index.vue' /* webpackChunkName: "pages/tvshows/index" */))
+const _19ea773a = () => interopDefault(import('../pages/movies/MovieListing.vue' /* webpackChunkName: "pages/movies/MovieListing" */))
+const _04f2bf93 = () => interopDefault(import('../pages/tvshows/TVShows.vue' /* webpackChunkName: "pages/tvshows/TVShows" */))
+const _85d23c28 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
 
@@ -22,19 +24,27 @@ export const routerOptions = {
 
   routes: [{
     path: "/movies",
-    component: _713be8cc,
+    component: _f4867e48,
     name: "movies"
   }, {
     path: "/search",
-    component: _c370a61e,
+    component: _9a6ef5fe,
     name: "search"
   }, {
+    path: "/tvshows",
+    component: _1e238371,
+    name: "tvshows"
+  }, {
     path: "/movies/MovieListing",
-    component: _7b08fd6c,
+    component: _19ea773a,
     name: "movies-MovieListing"
   }, {
+    path: "/tvshows/TVShows",
+    component: _04f2bf93,
+    name: "tvshows-TVShows"
+  }, {
     path: "/",
-    component: _257bc7fc,
+    component: _85d23c28,
     name: "index"
   }],
 
