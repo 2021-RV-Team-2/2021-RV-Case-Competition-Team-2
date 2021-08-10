@@ -33,7 +33,20 @@
                         <div class="boxOffice">
                             Box Office: {{ formatPrice(movie.revenue) }}
                         </div>
+                        <h6>STREAM</h6>
+                        <div v-for="provider in providers_fr">
+                            <img class="img-thumbnail service" v-bind:src="'http://image.tmdb.org/t/p/w200/' + provider.logo_path">
+                        </div>
+                        <h6>STREAM + BUY</h6>
+                        <div v-for="provider in providers_fr_buy">
+                            <img class="img-thumbnail service" v-bind:src="'http://image.tmdb.org/t/p/w200/' + provider.logo_path">
+                        </div>
+                        <h6>RENT</h6>
+                        <div v-for="provider in providers_rent">
+                            <img class="img-thumbnail service" v-bind:src="'http://image.tmdb.org/t/p/w200/' + provider.logo_path">
+                        </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -65,6 +78,10 @@ export default {
     try {
         let movieId = this.$route.query.movieId;
         let movieString = 'https://api.themoviedb.org/3/movie/' + movieId + '?api_key=9d58e9e21ea356358536de769ffa2e06';
+        let providerString = 'https://api.themoviedb.org/3/movie/' + movieId + '/watch/providers?api_key=9d58e9e21ea356358536de769ffa2e06';
+        axios.get(providerString).then(response => { this.providers_fr = response.data.results["US"]["flatrate"] });
+        axios.get(providerString).then(response => { this.providers_fr_buy = response.data.results["US"]["flatrate_and_buy"] });
+        axios.get(providerString).then(response => { this.providers_rent = response.data.results["US"]["rent"] });
         console.log(movieId);
         axios.get(movieString).then(response => { this.movie = response.data });
     } catch {
@@ -144,5 +161,8 @@ img {
 }
 .learnMore:hover {
     cursor:pointer;
+}
+.service{
+    height: 60px;
 }
 </style>
