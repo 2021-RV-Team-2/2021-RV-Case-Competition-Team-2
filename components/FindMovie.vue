@@ -137,7 +137,7 @@ export default {
 
         lengths = this.checkedServices.length;
         if (lengths > 0 ) {
-            genresVals = genresVals + "&with_watch_providers=" 
+            genresVals = genresVals + "watch_region=US&with_watch_providers=" 
             for(var i = 0; i < lengths; i++) {
                 genresVals = genresVals + this.checkedServices[i] 
                 if(i != lengths - 1) {
@@ -155,14 +155,16 @@ export default {
         var movTv = 0
         console.log(this.movTV)
         if (lengths == 0 || lengths == 2) {
-            movTv = Math.floor(Math.random() * 2 + 1);       
-        } 
-        if (this.movTV[0] == 1) {
+            movTv = Math.floor(Math.random() * 2 + 1);     
+        } else if (lengths == 1 && this.movTV[0] == 1) {
             movTv = 1
-            var apiCall = "https://api.themoviedb.org/3/discover/movie?api_key=9d58e9e21ea356358536de769ffa2e06&language=en-US&sort_by=popularity.asc&vote_count.gte=20&include_adult=false&include_video=false&page=1" + genresVals  
         } else {
             movTv = 2
-            var apiCall = "https://api.themoviedb.org/3/discover/tv?api_key=9d58e9e21ea356358536de769ffa2e06&language=en-US&sort_by=popularity.asc&vote_count.gte=20&include_adult=false&include_video=false&page=1" + genresVals  
+        }
+        if (movTv == 1) {
+            var apiCall = "https://api.themoviedb.org/3/discover/movie?api_key=9d58e9e21ea356358536de769ffa2e06&language=en-US&vote_count.gte=20&include_adult=false&include_video=false&page=1" + genresVals  
+        } else {
+            var apiCall = "https://api.themoviedb.org/3/discover/tv?api_key=9d58e9e21ea356358536de769ffa2e06&language=en-US&vote_count.gte=20&include_adult=false&include_video=false&page=1" + genresVals  
         }
 
         console.log(apiCall)
@@ -171,11 +173,10 @@ export default {
                 (response) => {
                     console.log(apiCall)
                     this.pickedMovies = response.data.results[ran];
-                    // alert('Hello ' + this.pickedMovies.id + '! ' + this.pickedMovies.name + this.pickedMovies.title);
                     if (movTv == 2 ) {
-                       window.location.href = "/tv/tvshows?tvId=" + this.pickedMovies.id
+                       window.location.href = "/findmovie/tvshows?tvId=" + this.pickedMovies.id
                     } else if (movTv == 1 ) {
-                       window.location.href = "/movies/MovieListing?movieId=" + this.pickedMovies.id
+                       window.location.href = "/findmovie/MovieListing?movieId=" + this.pickedMovies.id
                     } 
                 },
             )
@@ -193,10 +194,12 @@ export default {
             var a = this.checkedServices.slice(0,i)
             var b = this.checkedServices.slice(i + 1, lengths)
             this.checkedServices = [].concat(a, b);
+            console.log(this.checkedServices)
             return
         }
       }
       this.checkedServices.push(value) 
+      console.log(this.checkedServices)
     },
     genreClick: function (value) {
       var lengths = this.checkedGenres.length;

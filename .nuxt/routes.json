@@ -28,18 +28,18 @@
     "_name": "_4057345b"
   },
   {
-    "name": "findmovie-MovieListingFine",
-    "path": "/findmovie/MovieListingFine",
-    "component": "/Users/ncolberg/Desktop/2021-RV-Case-Competition-Team-2/pages/findmovie/MovieListingFine.vue",
-    "chunkName": "pages/findmovie/MovieListingFine",
-    "_name": "_a0b53708"
+    "name": "findmovie-MovieListing",
+    "path": "/findmovie/MovieListing",
+    "component": "/Users/ncolberg/Desktop/2021-RV-Case-Competition-Team-2/pages/findmovie/MovieListing.vue",
+    "chunkName": "pages/findmovie/MovieListing",
+    "_name": "_cf5ee6bc"
   },
   {
-    "name": "findmovie-TVShow",
-    "path": "/findmovie/TVShow",
-    "component": "/Users/ncolberg/Desktop/2021-RV-Case-Competition-Team-2/pages/findmovie/TVShow.vue",
-    "chunkName": "pages/findmovie/TVShow",
-    "_name": "_630e06ed"
+    "name": "findmovie-TVShows",
+    "path": "/findmovie/TVShows",
+    "component": "/Users/ncolberg/Desktop/2021-RV-Case-Competition-Team-2/pages/findmovie/TVShows.vue",
+    "chunkName": "pages/findmovie/TVShows",
+    "_name": "_025e77d6"
   },
   {
     "name": "movies-MovieListing",
