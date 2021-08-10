@@ -8,5 +8,6 @@ You can directly use them in pages and other components without the need to impo
 
 - `<MovieList>` | `<movie-list>` (components/MovieList.vue)
 - `<NuxtLogo>` | `<nuxt-logo>` (components/NuxtLogo.vue)
+- `<ProviderList>` | `<provider-list>` (components/ProviderList.vue)
 - `<Search>` | `<search>` (components/Search.vue)
 - `<Tutorial>` | `<tutorial>` (components/Tutorial.vue)

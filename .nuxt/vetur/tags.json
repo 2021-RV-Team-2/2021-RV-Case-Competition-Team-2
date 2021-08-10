@@ -5,6 +5,9 @@
   "NuxtLogo": {
     "description": "Auto imported from components/NuxtLogo.vue"
   },
+  "ProviderList": {
+    "description": "Auto imported from components/ProviderList.vue"
+  },
   "Search": {
     "description": "Auto imported from components/Search.vue"
   },

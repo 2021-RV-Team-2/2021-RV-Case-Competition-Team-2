@@ -12,7 +12,7 @@
                 <a class="nav-link" href="#">TV SHOWS</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">PROVIDERS</a>
+                 <NuxtLink class="nav-link" to="/providers">PROVIDERS</NuxtLink>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">NEWS</a>
