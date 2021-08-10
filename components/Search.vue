@@ -6,8 +6,8 @@
   <div v-show="showResults" class="menu-item">
     <ul class="searchMenu">
         <li v-for='result in results' :key='result.id'>
-            <a v-if="result.media_type === 'movie'" class="menu-item" :href="'../movies/MovieListing?movieId=' + result.id">{{result.title}}</a>
-            <a v-else-if="result.media_type === 'tv'" class="menu-item" :href="'../tv/tvshows?tvId=' + result.id">{{result.original_name}}</a>
+            <a v-if="result.media_type === 'movie'" class="menu-item" :href="'/movies/MovieListing?movieId=' + result.id">{{result.title}}</a>
+            <a v-else-if="result.media_type === 'tv'" class="menu-item" :href="'/tv/TVShows?tvId=' + result.id">{{result.original_name}}</a>
         </li>
     </ul>
   </div>
