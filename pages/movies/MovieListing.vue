@@ -40,7 +40,7 @@
     </div>
  </div>
 </template>
-<script>
+<script scope>
 import axios from 'axios'
 // import Search from '@/components/Search'
 
@@ -99,7 +99,7 @@ export default {
  layout: 'default'
 }
 </script>
-<style>
+<style scoped>
 html, body {
     background: #000!important;
     color: #fff!important;
@@ -108,7 +108,6 @@ img {
     max-width:100%;
 }
 .movie {
-    max-height: 300px;
     padding:10px;
     padding-bottom:20px;
     color:#000;
