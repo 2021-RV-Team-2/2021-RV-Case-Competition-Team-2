@@ -1,4 +1,13 @@
 {
+  "HomeBanner": {
+    "description": "Auto imported from components/HomeBanner.vue"
+  },
+  "HomeMovieList": {
+    "description": "Auto imported from components/HomeMovieList.vue"
+  },
+  "HomeTVList": {
+    "description": "Auto imported from components/HomeTVList.vue"
+  },
   "MovieList": {
     "description": "Auto imported from components/MovieList.vue"
   },
