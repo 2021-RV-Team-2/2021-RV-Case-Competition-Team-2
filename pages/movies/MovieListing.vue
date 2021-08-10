@@ -43,9 +43,11 @@
 <script scope>
 import axios from 'axios'
 // import Search from '@/components/Search'
-
 export default {
  name: 'movieListing',
+ head: {
+    title: 'Movies',
+ },
  components: {
     // Search
  },
