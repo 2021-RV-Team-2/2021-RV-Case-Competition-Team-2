@@ -25,9 +25,9 @@ export default {
    showResults: true
   }
  },
- mounted () {
-    this.showResults = false;
- },
+//  mounted () {
+//     this.showResults = false;
+//  },
  methods: {
   getResult(query) {
     try {
