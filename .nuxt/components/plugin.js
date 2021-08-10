@@ -2,6 +2,7 @@ import Vue from 'vue'
 import { wrapFunctional } from './utils'
 
 const components = {
+  FindMovie: () => import('../../components/FindMovie.vue' /* webpackChunkName: "components/find-movie" */).then(c => wrapFunctional(c.default || c)),
   HomeBanner: () => import('../../components/HomeBanner.vue' /* webpackChunkName: "components/home-banner" */).then(c => wrapFunctional(c.default || c)),
   HomeMovieList: () => import('../../components/HomeMovieList.vue' /* webpackChunkName: "components/home-movie-list" */).then(c => wrapFunctional(c.default || c)),
   HomeTVList: () => import('../../components/HomeTVList.vue' /* webpackChunkName: "components/home-t-v-list" */).then(c => wrapFunctional(c.default || c)),

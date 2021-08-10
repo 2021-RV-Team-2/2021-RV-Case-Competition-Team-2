@@ -1,5 +1,6 @@
 import { wrapFunctional } from './utils'
 
+export { default as FindMovie } from '../../components/FindMovie.vue'
 export { default as HomeBanner } from '../../components/HomeBanner.vue'
 export { default as HomeMovieList } from '../../components/HomeMovieList.vue'
 export { default as HomeTVList } from '../../components/HomeTVList.vue'
@@ -11,6 +12,7 @@ export { default as TVList } from '../../components/TVList.vue'
 export { default as TVReviews } from '../../components/TVReviews.vue'
 export { default as Tutorial } from '../../components/Tutorial.vue'
 
+export const LazyFindMovie = import('../../components/FindMovie.vue' /* webpackChunkName: "components/find-movie" */).then(c => wrapFunctional(c.default || c))
 export const LazyHomeBanner = import('../../components/HomeBanner.vue' /* webpackChunkName: "components/home-banner" */).then(c => wrapFunctional(c.default || c))
 export const LazyHomeMovieList = import('../../components/HomeMovieList.vue' /* webpackChunkName: "components/home-movie-list" */).then(c => wrapFunctional(c.default || c))
 export const LazyHomeTVList = import('../../components/HomeTVList.vue' /* webpackChunkName: "components/home-t-v-list" */).then(c => wrapFunctional(c.default || c))
