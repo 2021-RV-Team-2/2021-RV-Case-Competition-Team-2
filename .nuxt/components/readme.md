@@ -14,4 +14,5 @@ You can directly use them in pages and other components without the need to impo
 - `<NuxtLogo>` | `<nuxt-logo>` (components/NuxtLogo.vue)
 - `<Search>` | `<search>` (components/Search.vue)
 - `<TVList>` | `<t-v-list>` (components/TVList.vue)
+- `<TVReviews>` | `<t-v-reviews>` (components/TVReviews.vue)
 - `<Tutorial>` | `<tutorial>` (components/Tutorial.vue)

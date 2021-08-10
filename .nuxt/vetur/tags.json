@@ -23,6 +23,9 @@
   "TVList": {
     "description": "Auto imported from components/TVList.vue"
   },
+  "TVReviews": {
+    "description": "Auto imported from components/TVReviews.vue"
+  },
   "Tutorial": {
     "description": "Auto imported from components/Tutorial.vue"
   }

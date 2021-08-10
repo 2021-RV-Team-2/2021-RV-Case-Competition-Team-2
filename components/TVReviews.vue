@@ -23,10 +23,7 @@
 import axios from 'axios'
 // import Search from '@/components/Search'
 export default {
- name: 'movieListing',
- head: {
-    title: 'Movies',
- },
+ name: 'TVReview',
  components: {
     // Search
  },
@@ -42,8 +39,8 @@ export default {
  },
  mounted () {
     try {
-        let movieId = this.$route.query.movieId;
-        let movieString = 'https://api.themoviedb.org/3/movie/' + movieId + '/reviews?api_key=9d58e9e21ea356358536de769ffa2e06';
+        let movieId = this.$route.query.tvId;
+        let movieString = 'https://api.themoviedb.org/3/tv/' + movieId + '/reviews?api_key=9d58e9e21ea356358536de769ffa2e06';
         axios.get(movieString).then(response => { this.reviews = response.data.results });
     } catch {
         console.log("ERROR IN SEARCH");
