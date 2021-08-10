@@ -1,11 +1,11 @@
 <template>
  <div class="default-page">
      <nav class="navbar navbar-expand-lg navbar-light navbar-redreels py-5">
-        <NuxtLink class="navbar-brand position-absolute" to="/">
-            <img src="@/assets/redreelslogo.png" width="200px" alt="">
-        </NuxtLink>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <NuxtLink class="navbar-brand" to="/"><img src="@/assets/redreelslogo.png" width="200px" alt=""></NuxtLink>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse links" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto">
             <li class="nav-item px-4">
                 <NuxtLink class="nav-link active" to="/movies">MOVIES</NuxtLink>
@@ -21,7 +21,6 @@
             </li>
             </ul>
         </div>
-        
     </nav>
     <!-- SEARCH BAR -->
     <!-- <form class="form-inline mx-auto">
@@ -130,10 +129,6 @@
     color: #D1495B;
 }
 
-.navbar-header {
-        position: absolute;
-}
-
 .form-inline {
     position: relative;
     top: -20px;
@@ -162,5 +157,10 @@ h6{
   font-family: "Lato";
   clear:both;
   font-size: 15px;
+}
+
+.links{
+    position: relative;
+    left: -100px;
 }
 </style>
