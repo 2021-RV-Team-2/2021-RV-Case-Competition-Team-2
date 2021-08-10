@@ -4,12 +4,12 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _5796388b = () => interopDefault(import('../pages/movies/index.vue' /* webpackChunkName: "pages/movies/index" */))
-const _f6bc06a0 = () => interopDefault(import('../pages/search/index.vue' /* webpackChunkName: "pages/search/index" */))
-const _0545db8a = () => interopDefault(import('../pages/tv/index.vue' /* webpackChunkName: "pages/tv/index" */))
-const _3e8a66aa = () => interopDefault(import('../pages/movies/MovieListing.vue' /* webpackChunkName: "pages/movies/MovieListing" */))
-const _a6411528 = () => interopDefault(import('../pages/tv/TVShows.vue' /* webpackChunkName: "pages/tv/TVShows" */))
-const _0902211d = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _713be8cc = () => interopDefault(import('../pages/movies/index.vue' /* webpackChunkName: "pages/movies/index" */))
+const _c370a61e = () => interopDefault(import('../pages/search/index.vue' /* webpackChunkName: "pages/search/index" */))
+const _93f0576a = () => interopDefault(import('../pages/tv/index.vue' /* webpackChunkName: "pages/tv/index" */))
+const _7b08fd6c = () => interopDefault(import('../pages/movies/MovieListing.vue' /* webpackChunkName: "pages/movies/MovieListing" */))
+const _350641ed = () => interopDefault(import('../pages/tv/TVShows.vue' /* webpackChunkName: "pages/tv/TVShows" */))
+const _257bc7fc = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
 
@@ -24,27 +24,27 @@ export const routerOptions = {
 
   routes: [{
     path: "/movies",
-    component: _5796388b,
+    component: _713be8cc,
     name: "movies"
   }, {
     path: "/search",
-    component: _f6bc06a0,
+    component: _c370a61e,
     name: "search"
   }, {
     path: "/tv",
-    component: _0545db8a,
+    component: _93f0576a,
     name: "tv"
   }, {
     path: "/movies/MovieListing",
-    component: _3e8a66aa,
+    component: _7b08fd6c,
     name: "movies-MovieListing"
   }, {
     path: "/tv/TVShows",
-    component: _a6411528,
+    component: _350641ed,
     name: "tv-TVShows"
   }, {
     path: "/",
-    component: _0902211d,
+    component: _257bc7fc,
     name: "index"
   }],
 
