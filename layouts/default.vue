@@ -9,7 +9,7 @@
                 <NuxtLink class="nav-link" to="/movies">MOVIES</NuxtLink>
             </li>
             <li class="nav-item text-secondary">
-               <NuxtLink class="nav-link" to="/TVshows">TV SHOWS</NuxtLink>
+               <NuxtLink class="nav-link" to="/tv">TV SHOWS</NuxtLink>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">PROVIDERS</a>

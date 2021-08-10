@@ -1,12 +1,13 @@
 <template>
  <div class='tvList container'>
     <!--<Search/>-->
+
     <h1>TV</h1>
     <div class="tvListing row">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
             <div class="tv">
                 <div class="tvTitle text-truncate">
-                    <h3>{{ tv.title }}</h3>
+                    <h3>{{ tv.name }}</h3>
                 </div>
                 <div class="row">
                     <div class="col-md-3 col-sm-12">
@@ -16,7 +17,7 @@
                     </div>
                     <div class="col-md-9 col-sm-12">
                         <div class="tvYear">
-                            {{ tv.release_date }}
+                            {{ formatYear(tv.first_air_date) }}
                         </div>
                         <div class="tvRating float-end">
                             {{ tv.vote_average }} ({{ tv.vote_count }} votes)
@@ -24,14 +25,11 @@
                         <div class="tvDescription">
                             {{ tv.overview }}
                         </div>
+                        <div class="seasons">
+                            Seasons: {{ tv.number_of_seasons }}
+                        </div>
                         <div class="runtime">
-                            Runtime: {{ duration(tv.runtime) }}
-                        </div>
-                        <div class="budget">
-                            Budget: {{ formatPrice(tv.budget) }}
-                        </div>
-                        <div class="boxOffice">
-                            Box Office: {{ formatPrice(tv.revenue) }}
+                            Episode Runtime: {{ duration(tv.episode_run_time) }}
                         </div>
                     </div>
                 </div>
@@ -45,7 +43,7 @@ import axios from 'axios'
 // import Search from '@/components/Search'
 
 export default {
- name: 'tvListing',
+ name: 'tvShows',
  components: {
     // Search
  },
@@ -83,7 +81,17 @@ export default {
       const totalMinutes = value;
       const hours = Math.floor(totalMinutes / 60);
       const minutes = totalMinutes - (hours * 60);
-      return hours + ' hr ' + minutes + ' mins';
+      if ( Number.isNaN(hours) ) {
+          return 'Not Released'
+      }
+      if ( hours > 0 ) {
+        return hours + ' hr ' + minutes + ' mins';
+      } else {
+        return  minutes + ' mins';
+      }
+    },
+    formatYear(value) {
+        return String(value).substring(0,4)
     },
 //    tvListing() {
 //     try {

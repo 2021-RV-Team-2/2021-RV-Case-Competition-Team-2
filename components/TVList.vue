@@ -16,7 +16,7 @@
                     </div>
                     <div class="col-md-9 col-sm-12">
                         <div class="movieYear">
-                            {{ tv.release_date }}
+                            {{ formatYear(tv.first_air_date) }}
                         </div>
                         <div class="movieRating float-end">
                             {{ tv.vote_average }} ({{ tv.vote_count }} votes)
@@ -24,8 +24,9 @@
                         <div class="movieDescription">
                             {{ tv.overview }}
                         </div>
+                        
                         <div>
-                            <NuxtLink class="learnMore" :to="{path: '/movies/tvListing', query: { movieId: tv.id }}">Learn More</NuxtLink>
+                            <NuxtLink class="learnMore" :to="{path: '/tv/tvshows', query: { tvId: tv.id }}">Learn More</NuxtLink>
                         </div>
                     </div>
                 </div>
@@ -36,6 +37,7 @@
 </template>
 <script>
 import axios from 'axios'
+
 // import Search from '@/components/Search'
 
 export default {
@@ -57,11 +59,15 @@ export default {
     } catch {
         console.log("ERROR IN SEARCH");
     }
-   }
+   },
+   formatYear(value) {
+        return String(value).substring(0,4)
+    },
  },
  mounted () {
     this.tvList();
  },
+
  layout: 'default'
 }
 </script>
