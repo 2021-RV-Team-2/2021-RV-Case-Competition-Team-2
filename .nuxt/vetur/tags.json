@@ -1,0 +1,20 @@
+{
+  "FindMovie": {
+    "description": "Auto imported from components/FindMovie.vue"
+  },
+  "MovieList": {
+    "description": "Auto imported from components/MovieList.vue"
+  },
+  "NuxtLogo": {
+    "description": "Auto imported from components/NuxtLogo.vue"
+  },
+  "Search": {
+    "description": "Auto imported from components/Search.vue"
+  },
+  "TVList": {
+    "description": "Auto imported from components/TVList.vue"
+  },
+  "Tutorial": {
+    "description": "Auto imported from components/Tutorial.vue"
+  }
+}

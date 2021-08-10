@@ -173,7 +173,7 @@ export default {
                     this.pickedMovies = response.data.results[ran];
                     // alert('Hello ' + this.pickedMovies.id + '! ' + this.pickedMovies.name + this.pickedMovies.title);
                     if (movTv == 2 ) {
-                       window.location.href = "tv/TVShows?tvId=" + this.pickedMovies.id
+                       window.location.href = "/tv/tvshows?tvId=" + this.pickedMovies.id
                     } else if (movTv == 1 ) {
                        window.location.href = "/movies/MovieListing?movieId=" + this.pickedMovies.id
                     } 
