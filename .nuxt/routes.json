@@ -2,19 +2,22 @@
   {
     "name": "movies",
     "path": "/movies",
-    "component": "/Users/nsantini/Documents/GitHub/2021-RV-Case-Competition-Team-2/pages/movies/index.vue",
-    "chunkName": "pages/movies/index"
+    "component": "/Users/lwolf/Desktop/RV/2021-RV-Case-Competition-Team-2/pages/movies/index.vue",
+    "chunkName": "pages/movies/index",
+    "_name": "_5796388b"
   },
   {
     "name": "search",
     "path": "/search",
-    "component": "/Users/nsantini/Documents/GitHub/2021-RV-Case-Competition-Team-2/pages/search/index.vue",
-    "chunkName": "pages/search/index"
+    "component": "/Users/lwolf/Desktop/RV/2021-RV-Case-Competition-Team-2/pages/search/index.vue",
+    "chunkName": "pages/search/index",
+    "_name": "_f6bc06a0"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/Users/nsantini/Documents/GitHub/2021-RV-Case-Competition-Team-2/pages/index.vue",
-    "chunkName": "pages/index"
+    "component": "/Users/lwolf/Desktop/RV/2021-RV-Case-Competition-Team-2/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_0902211d"
   }
 ]

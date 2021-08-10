@@ -1,13 +1,16 @@
 <template>
  <div class='search'>
-  <h1>Search</h1>
-  <input type='text' v-model='query' @keyup='getResult(query)'>
+  <form class="form-inline mx-auto">
+    <input class="form-control mx-auto" type='text' v-model='query' @keyup='getResult(query)'>
+  </form>
   <div v-for='result in results' :key='result.id'>
    <p>{{result.title}} | {{result.release_date}}</p>
    <img v-bind:src="'http://image.tmdb.org/t/p/w500/' + result.poster_path" width='100px'>
   </div>
  </div>
 </template>
+
+
 <script>
 import axios from 'axios'
 export default {
@@ -30,3 +33,15 @@ export default {
  }
 }
 </script>
+
+<style scoped>
+
+
+.form-control {
+    border: 0px;
+    border-radius: 15px;
+    width: 30%;
+    box-shadow: 0px 0px 0px 10px #F2F2F2;
+}
+
+</style>

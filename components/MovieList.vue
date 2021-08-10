@@ -1,6 +1,5 @@
 <template>
  <div class='movieList container'>
-    <Search/>
     <h1 @click="movieList()">Movie List</h1>
     <div class="latestMovies row">
         <div v-for="movie in latestMovies" :key="movie.id" class="col-md-2">
