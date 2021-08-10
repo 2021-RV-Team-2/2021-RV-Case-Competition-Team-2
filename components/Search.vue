@@ -6,9 +6,9 @@
   <div v-show="showResults" class="menu-item">
     <ul class="searchMenu">
         <li v-for='result in results' :key='result.id'>
-            <!-- <a v-if="result.media_type === 'movie'" class="menu-item" :href="'/movies/MovieListing?movieId=' + result.id">{{result.title}}</a>
-            <a v-else-if="result.media_type === 'tv'" class="menu-item" :href="'/tv/TVShows?tvId=' + result.id">{{result.original_name}}</a> -->
-            <router-link v-if="result.media_type === 'movie'" class="menu-item" :to="{path: '/movies/MovieListing', query: { movieId: result.id }, force: true}" replace>{{result.title}}</router-link>
+            <a v-if="result.media_type === 'movie'" class="menu-item" :href="'/movies/MovieListing?movieId=' + result.id">{{result.title}}</a>
+            <a v-else-if="result.media_type === 'tv'" class="menu-item" :href="'/tv/TVShows?tvId=' + result.id">{{result.original_name}}</a>
+            <!-- <router-link v-if="result.media_type === 'movie'" class="menu-item" :to="{path: '/movies/MovieListing', query: { movieId: result.id }, force: true}" replace>{{result.title}}</router-link> -->
             <!-- <router-link v-else-if="result.media_type === 'tv'" class="menu-item" :to="{path: '/tv/TVshows', query: { tvId: result.id }, force: true}" replace>{{result.title}}</router-link> -->
         </li>
     </ul>
