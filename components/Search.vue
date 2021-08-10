@@ -42,8 +42,8 @@ export default {
         this.showResults = true;
     }
    }
- }
- // watchQuery: ['movieId', 'tvId']
+ },
+ watchQuery: ['movieId', 'tvId']
 }
 </script>
 
