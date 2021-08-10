@@ -6,8 +6,8 @@
   <div v-show="showResults" class="menu-item">
     <ul class="searchMenu">
         <li v-for='result in results' :key='result.id'>
-            <span v-if="result.media_type === 'movie'"><NuxtLink class="menu-item" :to="{path: '/movies/MovieListing', query: { movieId: result.id }, force: true}">{{result.title}}</NuxtLink></span>
-            <!-- <span v-else-if="result.media_type === 'tv'"><NuxtLink class="menu-item" :to="{path: '/tv/tvshows', query: { tvId: result.id }, force: true}">{{result.title}}</NuxtLink></span> -->
+            <a v-if="result.media_type === 'movie'" class="menu-item" :href="'/movies/MovieListing?movieId=' + result.id">{{result.title}}</a>
+            <a v-else-if="result.media_type === 'tv'" class="menu-item" :href="'/tv/tvshows?tvId=' + result.id">{{result.original_name}}</a>
         </li>
     </ul>
   </div>
@@ -25,6 +25,9 @@ export default {
    results: '',
    showResults: true
   }
+ },
+ mounted () {
+    this.showResults = false;
  },
  methods: {
   getResult(query) {
@@ -62,7 +65,7 @@ export default {
     z-index:1;
 }
 
-.menu-item span a {
+.menu-item a {
 	padding: 5px 0 5px 0;
 	text-decoration: none;
 	margin: 0 15px 0 15px;
@@ -97,7 +100,7 @@ export default {
     margin-left: 0;
     padding-left: 0;
 }
-.menu-item ul li span a {
+.menu-item ul li a {
     display:block;
 	font-size: 20px;
 	width: 100%;
