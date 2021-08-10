@@ -1,9 +1,9 @@
 <template>
  <div class="default-page">
      <nav class="navbar navbar-expand-lg navbar-light navbar-redreels py-5">
-        <a class="navbar-brand position-absolute" href="#">
+        <NuxtLink class="navbar-brand position-absolute" to="/">
             <img src="@/assets/redreelslogo.png" width="200px" alt="">
-        </a>
+        </NuxtLink>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto">
@@ -14,10 +14,10 @@
                <NuxtLink class="nav-link" to="/tv">TV SHOWS</NuxtLink>
             </li>
             <li class="nav-item px-4">
-                <a class="nav-link" href="#">PROVIDERS</a>
+                <NuxtLink class="nav-link" to="/">PROVIDERS</NuxtLink>
             </li>
             <li class="nav-item px-4">
-                <a class="nav-link" href="#">NEWS</a>
+                <NuxtLink class="nav-link" to="/">NEWS</NuxtLink>
             </li>
             </ul>
         </div>

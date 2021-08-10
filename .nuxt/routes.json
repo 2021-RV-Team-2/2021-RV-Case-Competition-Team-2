@@ -2,37 +2,37 @@
   {
     "name": "movies",
     "path": "/movies",
-    "component": "/Users/ncolberg/Desktop/2021-RV-Case-Competition-Team-2/pages/movies/index.vue",
+    "component": "/Users/lwolf/Desktop/RV/2021-RV-Case-Competition-Team-2/pages/movies/index.vue",
     "chunkName": "pages/movies/index",
-    "_name": "_f4867e48"
+    "_name": "_5796388b"
   },
   {
     "name": "search",
     "path": "/search",
-    "component": "/Users/ncolberg/Desktop/2021-RV-Case-Competition-Team-2/pages/search/index.vue",
+    "component": "/Users/lwolf/Desktop/RV/2021-RV-Case-Competition-Team-2/pages/search/index.vue",
     "chunkName": "pages/search/index",
-    "_name": "_9a6ef5fe"
+    "_name": "_f6bc06a0"
   },
   {
     "name": "tv",
     "path": "/tv",
-    "component": "/Users/ncolberg/Desktop/2021-RV-Case-Competition-Team-2/pages/tv/index.vue",
+    "component": "/Users/lwolf/Desktop/RV/2021-RV-Case-Competition-Team-2/pages/tv/index.vue",
     "chunkName": "pages/tv/index",
-    "_name": "_4057345b"
+    "_name": "_0545db8a"
   },
   {
     "name": "movies-MovieListing",
     "path": "/movies/MovieListing",
-    "component": "/Users/ncolberg/Desktop/2021-RV-Case-Competition-Team-2/pages/movies/MovieListing.vue",
+    "component": "/Users/lwolf/Desktop/RV/2021-RV-Case-Competition-Team-2/pages/movies/MovieListing.vue",
     "chunkName": "pages/movies/MovieListing",
-    "_name": "_19ea773a"
+    "_name": "_3e8a66aa"
   },
   {
     "name": "tv-TVShows",
     "path": "/tv/TVShows",
-    "component": "/Users/ncolberg/Desktop/2021-RV-Case-Competition-Team-2/pages/tv/TVShows.vue",
+    "component": "/Users/lwolf/Desktop/RV/2021-RV-Case-Competition-Team-2/pages/tv/TVShows.vue",
     "chunkName": "pages/tv/TVShows",
-    "_name": "_68fdddfd"
+    "_name": "_a6411528"
   },
   {
     "name": "index",
@@ -40,10 +40,5 @@
     "component": "/Users/lwolf/Desktop/RV/2021-RV-Case-Competition-Team-2/pages/index.vue",
     "chunkName": "pages/index",
     "_name": "_0902211d"
-  },
-  {
-    "component": "/Users/ncolberg/Desktop/2021-RV-Case-Competition-Team-2/pages/index.vue",
-    "chunkName": "pages/index",
-    "_name": "_85d23c28"
   }
 ]
