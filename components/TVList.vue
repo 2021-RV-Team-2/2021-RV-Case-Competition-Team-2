@@ -55,7 +55,7 @@ export default {
  methods: {
    tvList() {
     try {
-        axios.get('https://api.themoviedb.org/3/discover/tv?api_key=9d58e9e21ea356358536de769ffa2e06').then(response => { this.latestTV = response.data.results })
+        axios.get('https://api.themoviedb.org/3/discover/tv?api_key=9d58e9e21ea356358536de769ffa2e06&language=en-US&vote_count.gte=20&page=1').then(response => { this.latestTV = response.data.results })
     } catch {
         console.log("ERROR IN SEARCH");
     }
