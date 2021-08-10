@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: '2021-RV-Case-Competition-Team-2',
+    title: 'Red Reels',
     htmlAttrs: {
       lang: 'en'
     },

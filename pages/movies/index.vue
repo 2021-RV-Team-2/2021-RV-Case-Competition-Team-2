@@ -7,6 +7,9 @@
 import MovieList from '@/components/MovieList'
 export default {
  name: 'App',
+ head: {
+    title: 'Movies',
+ },
  components: {
   MovieList
  }
