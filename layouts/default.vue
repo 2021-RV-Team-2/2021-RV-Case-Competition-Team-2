@@ -1,5 +1,16 @@
 <template>
  <div class="default-page">
+     <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-9GR7E47XYT"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-9GR7E47XYT');
+        </script>
+    </head>
      <nav class="navbar navbar-expand-lg navbar-light navbar-redreels py-5">
         <NuxtLink class="navbar-brand" to="/"><img src="@/assets/redreelslogo.png" width="200px" alt=""></NuxtLink>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
