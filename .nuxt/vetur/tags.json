@@ -1,4 +1,7 @@
 {
+  "FindMovie": {
+    "description": "Auto imported from components/FindMovie.vue"
+  },
   "MovieList": {
     "description": "Auto imported from components/MovieList.vue"
   },

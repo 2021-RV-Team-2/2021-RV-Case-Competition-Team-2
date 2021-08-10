@@ -4,12 +4,14 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _5796388b = () => interopDefault(import('../pages/movies/index.vue' /* webpackChunkName: "pages/movies/index" */))
-const _f6bc06a0 = () => interopDefault(import('../pages/search/index.vue' /* webpackChunkName: "pages/search/index" */))
-const _0545db8a = () => interopDefault(import('../pages/tv/index.vue' /* webpackChunkName: "pages/tv/index" */))
-const _3e8a66aa = () => interopDefault(import('../pages/movies/MovieListing.vue' /* webpackChunkName: "pages/movies/MovieListing" */))
-const _a6411528 = () => interopDefault(import('../pages/tv/TVShows.vue' /* webpackChunkName: "pages/tv/TVShows" */))
-const _0902211d = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _26d31f18 = () => interopDefault(import('../pages/findmovie/index.vue' /* webpackChunkName: "pages/findmovie/index" */))
+const _f4867e48 = () => interopDefault(import('../pages/movies/index.vue' /* webpackChunkName: "pages/movies/index" */))
+const _9a6ef5fe = () => interopDefault(import('../pages/search/index.vue' /* webpackChunkName: "pages/search/index" */))
+const _4057345b = () => interopDefault(import('../pages/tv/index.vue' /* webpackChunkName: "pages/tv/index" */))
+const _630e06ed = () => interopDefault(import('../pages/findmovie/TVShow.vue' /* webpackChunkName: "pages/findmovie/TVShow" */))
+const _19ea773a = () => interopDefault(import('../pages/movies/MovieListing.vue' /* webpackChunkName: "pages/movies/MovieListing" */))
+const _68fdddfd = () => interopDefault(import('../pages/tv/TVShows.vue' /* webpackChunkName: "pages/tv/TVShows" */))
+const _85d23c28 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
 
@@ -23,28 +25,36 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
+    path: "/findmovie",
+    component: _26d31f18,
+    name: "findmovie"
+  }, {
     path: "/movies",
-    component: _5796388b,
+    component: _f4867e48,
     name: "movies"
   }, {
     path: "/search",
-    component: _f6bc06a0,
+    component: _9a6ef5fe,
     name: "search"
   }, {
     path: "/tv",
-    component: _0545db8a,
+    component: _4057345b,
     name: "tv"
   }, {
+    path: "/findmovie/TVShow",
+    component: _630e06ed,
+    name: "findmovie-TVShow"
+  }, {
     path: "/movies/MovieListing",
-    component: _3e8a66aa,
+    component: _19ea773a,
     name: "movies-MovieListing"
   }, {
     path: "/tv/TVShows",
-    component: _a6411528,
+    component: _68fdddfd,
     name: "tv-TVShows"
   }, {
     path: "/",
-    component: _0902211d,
+    component: _85d23c28,
     name: "index"
   }],
 
