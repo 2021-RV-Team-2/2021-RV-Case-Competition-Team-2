@@ -8,6 +8,7 @@ const _26d31f18 = () => interopDefault(import('../pages/findmovie/index.vue' /* 
 const _f4867e48 = () => interopDefault(import('../pages/movies/index.vue' /* webpackChunkName: "pages/movies/index" */))
 const _9a6ef5fe = () => interopDefault(import('../pages/search/index.vue' /* webpackChunkName: "pages/search/index" */))
 const _4057345b = () => interopDefault(import('../pages/tv/index.vue' /* webpackChunkName: "pages/tv/index" */))
+const _a0b53708 = () => interopDefault(import('../pages/findmovie/MovieListingFine.vue' /* webpackChunkName: "pages/findmovie/MovieListingFine" */))
 const _630e06ed = () => interopDefault(import('../pages/findmovie/TVShow.vue' /* webpackChunkName: "pages/findmovie/TVShow" */))
 const _19ea773a = () => interopDefault(import('../pages/movies/MovieListing.vue' /* webpackChunkName: "pages/movies/MovieListing" */))
 const _68fdddfd = () => interopDefault(import('../pages/tv/TVShows.vue' /* webpackChunkName: "pages/tv/TVShows" */))
@@ -40,6 +41,10 @@ export const routerOptions = {
     path: "/tv",
     component: _4057345b,
     name: "tv"
+  }, {
+    path: "/findmovie/MovieListingFine",
+    component: _a0b53708,
+    name: "findmovie-MovieListingFine"
   }, {
     path: "/findmovie/TVShow",
     component: _630e06ed,
