@@ -65,7 +65,7 @@ export default {
  layout: 'default'
 }
 </script>
-<style>
+<style scoped>
 html, body {
     background: #000!important;
     color: #fff!important;
