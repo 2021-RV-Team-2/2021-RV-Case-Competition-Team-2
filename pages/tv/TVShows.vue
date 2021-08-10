@@ -107,7 +107,7 @@ export default {
  layout: 'default'
 }
 </script>
-<style>
+<style scoped>
 html, body {
     background: #000!important;
     color: #fff!important;
@@ -116,7 +116,7 @@ img {
     max-width:100%;
 }
 .tv {
-    max-height: 300px;
+    max-height: 600px;
     padding:10px;
     padding-bottom:20px;
     color:#000;
