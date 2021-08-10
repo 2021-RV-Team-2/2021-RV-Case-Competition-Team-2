@@ -3,18 +3,18 @@
     <Search/>
     <h1 @click="movieList()">Movie List</h1>
     <div class="latestMovies row">
-        <div v-for="movie in latestMovies" :key="movie.id" class="col-xl-4 col-md-4 col-sm-12">
+        <div v-for="movie in latestMovies" :key="movie.id" class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
             <div class="movie">
                 <div class="movieTitle text-truncate">
                     <h3>{{movie.title}}</h3>
                 </div>
                 <div class="row">
-                    <div class="col-md-4 col-sm-12">
+                    <div class="col-md-3 col-sm-12">
                         <div class="movieImage text-center">
-                            <img v-bind:src="'http://image.tmdb.org/t/p/w500/' + movie.poster_path" width='100px'>
+                            <img v-bind:src="'http://image.tmdb.org/t/p/w500/' + movie.poster_path">
                         </div>
                     </div>
-                    <div class="col-md-8 col-sm-12">
+                    <div class="col-md-9 col-sm-12">
                         <div class="movieYear">
                             {{ movie.release_date }}
                         </div>
@@ -69,15 +69,17 @@ html, body {
     background: #000!important;
     color: #fff!important;
 }
+img {
+    max-width:100%;
+}
 .movie {
-    max-height: 220px;
+    max-height: 300px;
     padding:10px;
     padding-bottom:20px;
     color:#000;
     background: #fff;
     border-radius: 8px;
     margin-bottom:10px;
-    overflow-y: scroll;
     overflow-x: hidden;
     font-size: 12px;
 }
