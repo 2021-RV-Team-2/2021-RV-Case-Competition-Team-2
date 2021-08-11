@@ -134,7 +134,7 @@ img {
     float: right;
 }
 .tvDescription {
-    height: 100px;
+    height: 150px;
     overflow-y:scroll;
     width:100%;
     float: none;

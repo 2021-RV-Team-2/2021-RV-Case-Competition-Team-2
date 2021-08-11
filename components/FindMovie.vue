@@ -194,9 +194,9 @@ export default {
                     this.pickedMovies = response.data.results[ran];
                     // alert('Hello ' + this.pickedMovies.id + '! ' + this.pickedMovies.name + this.pickedMovies.title);
                     if (movTv == 2 ) {
-                       window.location.href = "/tv/tvshows?tvId=" + this.pickedMovies.id
+                       window.location.href = "/findmovie/tvshow?tvId=" + this.pickedMovies.id
                     } else if (movTv == 1 ) {
-                       window.location.href = "/movies/MovieListing?movieId=" + this.pickedMovies.id
+                       window.location.href = "/findmovie/MovieListing?movieId=" + this.pickedMovies.id
                     } 
                 },
             )
@@ -316,7 +316,7 @@ switch to violet when it is active*/
     border-radius: 4px;
     margin-top:20px;
     display:block;
-    width: 150px;
+    width: 105px;
     margin-bottom:5px;
 }
 .genre {
@@ -326,7 +326,7 @@ switch to violet when it is active*/
     border-radius: 4px;
     margin-top:20px;
     display:block;
-    width: 120px;
+    width: 90px;
     margin-bottom:5px;
 }
 .stream {
@@ -336,7 +336,7 @@ switch to violet when it is active*/
     border-radius: 4px;
     margin-top:20px;
     display:block;
-    width: 310px;
+    width: 224px;
     margin-bottom:5px;
 }
 .year {

@@ -24,10 +24,10 @@
     "chunkName": "pages/tv/index"
   },
   {
-    "name": "findmovie-MovieListingFine",
-    "path": "/findmovie/MovieListingFine",
-    "component": "/Users/ncolberg/Desktop/2021-RV-Case-Competition-Team-2/pages/findmovie/MovieListingFine.vue",
-    "chunkName": "pages/findmovie/MovieListingFine"
+    "name": "findmovie-MovieListing",
+    "path": "/findmovie/MovieListing",
+    "component": "/Users/ncolberg/Desktop/2021-RV-Case-Competition-Team-2/pages/findmovie/MovieListing.vue",
+    "chunkName": "pages/findmovie/MovieListing"
   },
   {
     "name": "findmovie-TVShow",
