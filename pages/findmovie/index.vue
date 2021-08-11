@@ -1,5 +1,6 @@
 <template>
  <div id='app'>
+    <h1 @click="genreList()" class="py-4 mx-auto text-center">FIND SOMETHING TO WATCH</h1>
   <FindMovie/>
  </div>
 </template>

@@ -1,5 +1,16 @@
 <template>
 <div class="container">
+  <div class="carousel">
+    <div class="row">
+        <div class="col-md-6">
+          <HomeCarousel/>
+        </div>
+        <div class="col-md-6">
+          <FindMovieHome/>
+        </div>
+      </div>
+    
+  </div>
   <div class="banner">
     <HomeBanner/>
   </div>
