@@ -89,7 +89,7 @@ export default {
  layout: 'default'
 }
 </script>
-<style>
+<style scope>
 html, body {
     background: #000!important;
     color: #fff!important;
