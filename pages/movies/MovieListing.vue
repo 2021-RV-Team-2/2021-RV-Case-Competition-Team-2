@@ -1,7 +1,5 @@
 <template>
  <div class='movieList container'>
-    <!--<Search/>-->
-    <h1>Movie</h1>
     <div class="movieListing row">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
             <div class="movie">
