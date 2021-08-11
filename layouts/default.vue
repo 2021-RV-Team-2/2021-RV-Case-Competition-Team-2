@@ -70,7 +70,7 @@
                 <NuxtLink to="/">PROVIDERS</NuxtLink>
             </p>
             <p>
-                <NuxtLink to="/watch">WHAT TO WATCH</NuxtLink>
+                <NuxtLink to="/findmovie">FIND A FILM</NuxtLink>
             </p>
             </div>
             <!-- Grid column -->
