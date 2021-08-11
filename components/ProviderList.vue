@@ -101,11 +101,9 @@ img {
 .custom-control-label {
     max-height: 300px;
     padding:10px;
-    padding-bottom:20px;
     color:#000;
     background: #fff;
     border-radius: 8px;
-    margin-bottom:10px;
     overflow-x: hidden;
     font-size: 12px;
 }
