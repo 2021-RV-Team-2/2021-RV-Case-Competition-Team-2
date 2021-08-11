@@ -7,13 +7,13 @@
                 <h5>FIND ME A</h5>
             </div>
             <div class="row">
-                <div class="col-sm">
+                <div class="col-sm-5">
                     <div class="custom-control custom-switch">
                         <input type="checkbox" class="custom-control-input" id="movie" v-on:click="movTVclick(1)">
                         <label class="custom-control-label" for="movie">Movie</label>
                     </div>
                 </div>
-                <div class="col-sm">
+                <div class="col-sm-5">
                     <div class="custom-control custom-switch">
                         <input type="checkbox" class="custom-control-input" id="tv" v-on:click="movTVclick(2)">
                         <label class="custom-control-label" for="tv">TV Show</label>
@@ -149,7 +149,8 @@ export default {
             genresVals = genresVals + "&with_runtime.lte=" + this.runtime
         }
         
-        var ran = Math.floor(Math.random() * 10);
+        
+       
 
         var lengths = this.movTV.length;
         var movTv = 0
@@ -162,8 +163,20 @@ export default {
             movTv = 2
         }
         if (movTv == 1) {
+            if (this.year2 != null && this.year2 != "")  {
+                genresVals = genresVals + "&release_date.lte=" + this.year2 + "-12-31"
+            }
+            if (this.year1 != null && this.year1 != "")  {
+                genresVals = genresVals + "&release_date.gte=" + this.year1 + "-01-01"
+            }
             var apiCall = "https://api.themoviedb.org/3/discover/movie?api_key=9d58e9e21ea356358536de769ffa2e06&language=en-US&vote_count.gte=20&include_adult=false&include_video=false&page=1" + genresVals  
         } else {
+            if (this.year2 != null && this.year2 != "")  {
+                genresVals = genresVals + "&air_date.lte=" + this.year2 + "-12-31"
+            }
+            if (this.year1 != null && this.year1 != "")  {
+                genresVals = genresVals + "&air_date.gte=" + this.year1 + "-01-01"
+            }
             var apiCall = "https://api.themoviedb.org/3/discover/tv?api_key=9d58e9e21ea356358536de769ffa2e06&language=en-US&vote_count.gte=20&include_adult=false&include_video=false&page=1" + genresVals  
         }
 
@@ -172,14 +185,18 @@ export default {
             axios.get(apiCall).then(
                 (response) => {
                     console.log(apiCall)
+                    var ran = Math.floor(Math.random() * response.data.results.length);
                     this.pickedMovies = response.data.results[ran];
+                    console.log(ran)
                     if (movTv == 2 ) {
                        window.location.href = "/findmovie/tvshows?tvId=" + this.pickedMovies.id
                     } else if (movTv == 1 ) {
                        window.location.href = "/findmovie/MovieListing?movieId=" + this.pickedMovies.id
                     } 
-                },
-            )
+                }, (error) => {
+                    console.log("Nothing matches your Criteria");
+                }
+            );
         } catch {
             console.log("ERROR IN SEARCH");
         }  
@@ -276,6 +293,7 @@ switch to violet when it is active*/
     background-color: #D1495B !important;
     border-color: #D1495B !important;
 }
+
 
 .row {
      padding:10px;
