@@ -106,6 +106,9 @@ img {
     overflow-x: hidden;
     font-size: 12px;
 }
+.custom-control-label:hover  {
+	cursor: pointer;
+}
 .providerYear, .providerRating {
     color: red;
     font-weight: bold;
