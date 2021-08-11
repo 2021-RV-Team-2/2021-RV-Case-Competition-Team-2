@@ -163,4 +163,9 @@ h6{
     position: relative;
     left: -100px;
 }
+@media screen and (max-width: 992px) {
+  ul {
+    margin-left: 80px!important;
+  }
+}
 </style>
