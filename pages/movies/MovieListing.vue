@@ -1,6 +1,5 @@
 <template>
  <div class='movieList container'>
-    <!--<Search/>-->
     <h1>Movie</h1>
     <div class="movieListing row">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
@@ -15,42 +14,58 @@
                         </div>
                     </div>
                     <div class="col-md-9 col-sm-12">
-                        <div class="movieYear">
-                            {{ movie.release_date }}
+                        <div class="row">
+                            <div class="col-md-8 col-sm-12">
+                                <div class="movieYear">
+                                    {{ formatDate(movie.release_date) }}
+                                </div>
+                                <div class="movieRating float-end">
+                                    {{ movie.vote_average }} &starf; ({{ movie.vote_count }} votes)
+                                </div>
+                                <div class="movieDescription">
+                                    <br>{{ movie.overview }}
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-12">
+                                <div class="runtime">
+                                    Runtime: {{ duration(movie.runtime) }}
+                                </div>
+                                <div class="budget">
+                                    Budget: {{ formatPrice(movie.budget) }}
+                                </div>
+                                <div class="boxOffice">
+                                    Box Office: {{ formatPrice(movie.revenue) }}
+                                </div>
+                            </div>
                         </div>
-                        <div class="movieRating float-end">
-                            {{ movie.vote_average }} ({{ movie.vote_count }} votes)
+                        <div class="col-md-12 col-sm-12">
+                            <h6 v-if="providers_fr">STREAM</h6>
+                            <div v-for="provider in providers_fr" :key="provider.logo_path">
+                                <a href="#" class="affiliateLink">
+                                    <img class="img-thumbnail service" v-bind:src="'http://image.tmdb.org/t/p/w200/' + provider.logo_path">
+                                </a>
+                            </div>
+                            <h6 v-if="providers_fr_buy">STREAM + BUY</h6>
+                            <div v-for="provider in providers_fr_buy" :key="provider.logo_path">
+                                <a href="#" class="affiliateLink">
+                                    <img class="img-thumbnail service" v-bind:src="'http://image.tmdb.org/t/p/w200/' + provider.logo_path">
+                                </a>
+                            </div>
+                            <h6><span v-if="providers_rent">RENT</span></h6>
+                            <div v-for="provider in providers_rent" :key="provider.logo_path">
+                                <a href="#" class="affiliateLink">
+                                    <img class="img-thumbnail service" v-bind:src="'http://image.tmdb.org/t/p/w200/' + provider.logo_path">
+                                </a>
+                            </div>
+                            <div v-if="videos" class="trailer">
+                                <h3>Trailer</h3>
+                                <div class="iframe-container">
+                                    <iframe class="iframe" width="560" height="315" v-bind:src="findTrailer(videos)"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <MovieReviews/>                    
                         </div>
-                        <div class="movieDescription">
-                            {{ movie.overview }}
-                        </div>
-                        <div class="runtime">
-                            Runtime: {{ duration(movie.runtime) }}
-                        </div>
-                        <div class="budget">
-                            Budget: {{ formatPrice(movie.budget) }}
-                        </div>
-                        <div class="boxOffice">
-                            Box Office: {{ formatPrice(movie.revenue) }}
-                        </div>
-                        <h6>STREAM</h6>
-                        <div v-for="provider in providers_fr" :key="provider.logo_path">
-                            <img class="img-thumbnail service" v-bind:src="'http://image.tmdb.org/t/p/w200/' + provider.logo_path">
-                        </div>
-                        <h6>STREAM + BUY</h6>
-                        <div v-for="provider in providers_fr_buy" :key="provider.logo_path">
-                            <img class="img-thumbnail service" v-bind:src="'http://image.tmdb.org/t/p/w200/' + provider.logo_path">
-                        </div>
-                        <h6>RENT</h6>
-                        <div v-for="provider in providers_rent" :key="provider.logo_path">
-                            <img class="img-thumbnail service" v-bind:src="'http://image.tmdb.org/t/p/w200/' + provider.logo_path">
-                        </div>
-
-                        <iframe width="560" height="315" v-bind:src="findTrailer(videos)"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-                        <MovieReviews/>                    
-                     </div>
-                    
+                    </div>
                 </div>
             </div>
         </div>
@@ -123,16 +138,10 @@ export default {
       const minutes = totalMinutes - (hours * 60);
       return hours + ' hr ' + minutes + ' mins';
     },
-//    movieListing() {
-//     try {
-//         let movieId = this.$route.query.movieId;
-//         let movieString = 'https://api.themoviedb.org/3/movie/' + movieId + '?api_key=9d58e9e21ea356358536de769ffa2e06';
-//         console.log(movieId);
-//         axios.get(movieString).then(response => { this.movie = response });
-//     } catch {
-//         console.log("ERROR IN SEARCH");
-//     }
-//    }
+    formatDate(value) {
+        let date = String(value);
+        return date.slice(0,4);
+    }
  },
  layout: 'default'
 }
@@ -181,5 +190,39 @@ img {
 }
 .service{
     height: 60px;
+}
+.iframe-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+}
+.iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+.trailer, .trailer h3 {
+    border-bottom: 1px solid #000;
+}
+.trailer {
+    margin-bottom: 20px;
+}
+iframe {
+    display: block;
+    margin: 10px auto;
+}
+.runtime, .budget, .boxOffice {
+    background: #D1495B;
+    color: white;
+    padding: 5px;
+    border-radius: 4px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: block;
+    width:100%;
+    max-width: 205px;
 }
 </style>

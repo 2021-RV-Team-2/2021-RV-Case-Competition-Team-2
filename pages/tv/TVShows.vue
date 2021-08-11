@@ -16,20 +16,26 @@
                         </div>
                     </div>
                     <div class="col-md-9 col-sm-12">
-                        <div class="tvYear">
-                            {{ formatYear(tv.first_air_date) }}
-                        </div>
-                        <div class="tvRating float-end">
-                            {{ tv.vote_average }} ({{ tv.vote_count }} votes)
-                        </div>
-                        <div class="tvDescription">
-                            {{ tv.overview }}
-                        </div>
-                        <div class="seasons">
-                            Seasons: {{ tv.number_of_seasons }}
-                        </div>
-                        <div class="runtime">
-                            Episode Runtime: {{ duration(tv.episode_run_time) }}
+                        <div class="row">
+                            <div class="col-md-8 col-sm-12">
+                                <div class="tvYear">
+                                    {{ formatYear(tv.first_air_date) }}
+                                </div>
+                                <div class="tvRating float-end">
+                                    {{ tv.vote_average }} &starf; ({{ tv.vote_count }} votes)
+                                </div>
+                                <div class="tvDescription">
+                                    {{ tv.overview }}
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-12">
+                                <div class="seasons">
+                                    Seasons: {{ tv.number_of_seasons }}
+                                </div>
+                                <div class="runtime">
+                                    Episode Runtime: {{ duration(tv.episode_run_time) }}
+                                </div>
+                            </div>
                         </div>
                         <TVReviews/>
                     </div>
@@ -93,17 +99,7 @@ export default {
     },
     formatYear(value) {
         return String(value).substring(0,4)
-    },
-//    tvListing() {
-//     try {
-//         let tvId = this.$route.query.tvId;
-//         let tvString = 'https://api.themoviedb.org/3/tv/' + tvId + '?api_key=9d58e9e21ea356358536de769ffa2e06';
-//         console.log(tvId);
-//         axios.get(tvString).then(response => { this.tv = response });
-//     } catch {
-//         console.log("ERROR IN SEARCH");
-//     }
-//    }
+    }
  },
  layout: 'default'
 }
@@ -152,5 +148,16 @@ img {
 }
 .learnMore:hover {
     cursor:pointer;
+}
+.runtime, .seasons {
+    background: #D1495B;
+    color: white;
+    padding: 5px;
+    border-radius: 4px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: block;
+    width:100%;
+    max-width: 205px;
 }
 </style>
