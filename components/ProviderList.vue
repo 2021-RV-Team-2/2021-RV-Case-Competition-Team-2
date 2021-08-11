@@ -10,6 +10,37 @@
              </div>
         </div>
     </div>
+    <!--<Search/>-->
+    <div class="latestMovies row">
+        <div v-for="movie in movieList" :key="movie.id" class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+            <div class="movie">
+                <div class="movieTitle text-truncate">
+                    <h3>{{movie.title}}</h3>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 col-sm-12">
+                        <div class="movieImage text-center">
+                            <img v-bind:src="'http://image.tmdb.org/t/p/w500/' + movie.poster_path">
+                        </div>
+                    </div>
+                    <div class="col-md-9 col-sm-12">
+                        <div class="movieYear">
+                            {{ movie.release_date }}
+                        </div>
+                        <div class="movieRating float-end">
+                            {{ movie.vote_average }} ({{ movie.vote_count }} votes)
+                        </div>
+                        <div class="movieDescription">
+                            {{ movie.overview }}
+                        </div>
+                        <div>
+                            <NuxtLink class="learnMore" :to="{path: '/movies/MovieListing', query: { movieId: movie.id }}">Learn More</NuxtLink>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+ </div>
  </div>
 </template>
 <script>
@@ -37,9 +68,9 @@ export default {
         console.log("ERROR IN SEARCH");
     }
    },
-   provClick() {
+   provClick(value) {
        try {
-        axios.get('https://api.themoviedb.org/3/discover/movie?api_key=9d58e9e21ea356358536de769ffa2e06&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_providers=9&with_watch_monetization_types=flatrate').then(response => { this.movieList = response.data.results.slice(0,2) })
+        axios.get('https://api.themoviedb.org/3/discover/movie?api_key=9d58e9e21ea356358536de769ffa2e06&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate' + '&with_watch_providers=' + value).then(response => { this.movieList = response.data.results.slice(0,5) })
         console.log(this.movieList)
     } catch {
         console.log("ERROR IN SEARCH");
