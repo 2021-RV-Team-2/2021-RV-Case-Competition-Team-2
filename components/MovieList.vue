@@ -1,7 +1,7 @@
 <template>
  <div class='movieList container'>
     <!--<Search/>-->
-    <h1 @click="movieList()">Movie List</h1>
+    <h1 @click="movieList()" class="py-4 mx-auto text-center">DISCOVER NEW MOVIES</h1>
     <div class="latestMovies row">
         <div v-for="movie in latestMovies" :key="movie.id" class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
             <div class="movie">
@@ -32,6 +32,12 @@
             </div>
         </div>
     </div>
+    <div class="pagination">
+        <div class="btnContainer">
+            <button @click="prevPage()" class="learnMore">Prev.</button>
+            <button @click="nextPage()" class="learnMore">Next.</button>
+        </div>
+    </div>
  </div>
 </template>
 <script>
@@ -47,16 +53,28 @@ export default {
   return {
    query: '',
    results: '',
-   latestMovies: ''
+   latestMovies: '',
+   page: 1
   }
  },
  methods: {
    movieList() {
+       let page = this.page;
     try {
-        axios.get('https://api.themoviedb.org/3/discover/movie?api_key=9d58e9e21ea356358536de769ffa2e06').then(response => { this.latestMovies = response.data.results })
+        axios.get('https://api.themoviedb.org/3/discover/movie?api_key=9d58e9e21ea356358536de769ffa2e06&language=en-US&vote_count.gte=20&page='+page).then(response => { this.latestMovies = response.data.results })
     } catch {
         console.log("ERROR IN SEARCH");
     }
+   },
+   nextPage() {
+       this.page++;
+       this.movieList();
+   },
+   prevPage() {
+       if (this.page > 1) {
+        this.page--;
+        this.movieList();
+       }
    }
  },
  mounted () {
@@ -66,6 +84,8 @@ export default {
 }
 </script>
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Roboto:wght@100;300;400;500;700&family=Montserrat:wght@500;700&display=swap');
+
 html, body {
     background: #000!important;
     color: #fff!important;
@@ -85,7 +105,7 @@ img {
     font-size: 12px;
 }
 .movieYear, .movieRating {
-    color: red;
+    color: #D1495B;
     font-weight: bold;
 }
 .movieYear {
@@ -101,7 +121,7 @@ img {
     float: none;
 }
 .learnMore {
-    background: red;
+    background: #D1495B;
     color: white;
     padding: 5px;
     border-radius: 4px;
@@ -112,5 +132,21 @@ img {
 .learnMore:hover {
     cursor:pointer;
     color: #fff;
+}
+h1 {
+    font-family: "Montserrat";
+    letter-spacing: .1rem;
+}
+.pagination {
+    width:100%;
+    display:block;
+}
+.pagination button {
+    display: inline-block;
+}
+.pagination .btnContainer {
+    width:155px;
+    display:block;
+    margin:0 auto;
 }
 </style>

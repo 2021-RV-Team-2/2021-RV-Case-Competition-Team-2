@@ -1,6 +1,21 @@
 {
+  "FindMovie": {
+    "description": "Auto imported from components/FindMovie.vue"
+  },
+  "HomeBanner": {
+    "description": "Auto imported from components/HomeBanner.vue"
+  },
+  "HomeMovieList": {
+    "description": "Auto imported from components/HomeMovieList.vue"
+  },
+  "HomeTVList": {
+    "description": "Auto imported from components/HomeTVList.vue"
+  },
   "MovieList": {
     "description": "Auto imported from components/MovieList.vue"
+  },
+  "MovieReviews": {
+    "description": "Auto imported from components/MovieReviews.vue"
   },
   "NuxtLogo": {
     "description": "Auto imported from components/NuxtLogo.vue"
@@ -10,6 +25,12 @@
   },
   "Search": {
     "description": "Auto imported from components/Search.vue"
+  },
+  "TVList": {
+    "description": "Auto imported from components/TVList.vue"
+  },
+  "TVReviews": {
+    "description": "Auto imported from components/TVReviews.vue"
   },
   "Tutorial": {
     "description": "Auto imported from components/Tutorial.vue"
