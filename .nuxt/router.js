@@ -4,11 +4,11 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _f4867e48 = () => interopDefault(import('../pages/movies/index.vue' /* webpackChunkName: "pages/movies/index" */))
-const _fb3afb82 = () => interopDefault(import('../pages/providers/index.vue' /* webpackChunkName: "pages/providers/index" */))
-const _9a6ef5fe = () => interopDefault(import('../pages/search/index.vue' /* webpackChunkName: "pages/search/index" */))
-const _19ea773a = () => interopDefault(import('../pages/movies/MovieListing.vue' /* webpackChunkName: "pages/movies/MovieListing" */))
-const _85d23c28 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _14397550 = () => interopDefault(import('../pages/movies/index.vue' /* webpackChunkName: "pages/movies/index" */))
+const _3723ed6a = () => interopDefault(import('../pages/providers/index.vue' /* webpackChunkName: "pages/providers/index" */))
+const _41453975 = () => interopDefault(import('../pages/search/index.vue' /* webpackChunkName: "pages/search/index" */))
+const _24f8cf74 = () => interopDefault(import('../pages/movies/MovieListing.vue' /* webpackChunkName: "pages/movies/MovieListing" */))
+const _350187f8 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
 
@@ -23,23 +23,23 @@ export const routerOptions = {
 
   routes: [{
     path: "/movies",
-    component: _f4867e48,
+    component: _14397550,
     name: "movies"
   }, {
     path: "/providers",
-    component: _fb3afb82,
+    component: _3723ed6a,
     name: "providers"
   }, {
     path: "/search",
-    component: _9a6ef5fe,
+    component: _41453975,
     name: "search"
   }, {
     path: "/movies/MovieListing",
-    component: _19ea773a,
+    component: _24f8cf74,
     name: "movies-MovieListing"
   }, {
     path: "/",
-    component: _85d23c28,
+    component: _350187f8,
     name: "index"
   }],
 
