@@ -5,8 +5,11 @@
     <div class="latestProviders row">
         <div v-for="serv in latestProviders" :key="serv.provider_name" class="switch" >
              <div class="custom-control custom-switch">
-                <input type="checkbox" class="custom-control-input" :id="serv.provider_name"  v-on:click="provClick(serv.provider_id)" >
-                <label class="custom-control-label" :for="serv.provider_name">{{serv.provider_name}}</label>
+                <div class="providerBG">
+                    <input type="checkbox" class="custom-control-input" :id="serv.provider_name"  v-on:click="provClick(serv.provider_id)" >
+                    <label class="custom-control-label" :for="serv.provider_name">{{serv.provider_name}}</label>
+                    <img v-bind:src="'http://image.tmdb.org/t/p/w500/' + serv.logo_path" v-on:click="provClick(serv.provider_id)" class="brandLogo">
+                </div>
              </div>
         </div>
     </div>
@@ -98,11 +101,9 @@ img {
 .custom-control-label {
     max-height: 300px;
     padding:10px;
-    padding-bottom:20px;
     color:#000;
     background: #fff;
     border-radius: 8px;
-    margin-bottom:10px;
     overflow-x: hidden;
     font-size: 12px;
 }
@@ -164,5 +165,25 @@ img {
 .learnMore:hover {
     cursor:pointer;
     color: #fff;
+}
+.brandLogo {
+    max-width: 100%;
+    max-height: 75px;
+    display: block;
+    margin: 0 auto;
+}
+.brandLogo:hover {
+    cursor: pointer;
+}
+.providerBG {
+    background:#fff;
+}
+.custom-switch {
+    text-align: center;
+    width: 100%;
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
 }
 </style>
