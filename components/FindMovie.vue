@@ -4,7 +4,7 @@
     <h1 @click="genreList()" class="py-4 mx-auto text-center">FIND SOMETHING TO WATCH</h1>
         <div class="findMovieForm">
             <div class="row">
-                <div class="col-md-6 col-sm-12">
+                <div class="col-md-10 col-sm-12">
                     <div class="findMe text-truncate">
                         <h5>FIND ME A</h5>
                     </div>
@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 col-sm-12">
+                <div class="col-md-10 col-sm-12">
                     <div class="genre text-truncate">
                         <h5>GENRES</h5>
                     </div>
@@ -34,7 +34,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-12">
+             </div>
+             <div class="row">
+                <div class="col-md-10 col-sm-12">
                     <div class="stream text-truncate">
                         <h5>STREAMING SERVICES</h5>
                     </div>

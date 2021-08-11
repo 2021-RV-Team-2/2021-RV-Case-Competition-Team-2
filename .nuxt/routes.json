@@ -2,64 +2,64 @@
   {
     "name": "findmovie",
     "path": "/findmovie",
-    "component": "/Users/nsantini/Documents/GitHub/2021-RV-Case-Competition-Team-2/pages/findmovie/index.vue",
+    "component": "/Users/ncolberg/Desktop/2021-RV-Case-Competition-Team-2/pages/findmovie/index.vue",
     "chunkName": "pages/findmovie/index",
-    "_name": "_2241faf8"
+    "_name": "_26d31f18"
   },
   {
     "name": "movies",
     "path": "/movies",
-    "component": "/Users/nsantini/Documents/GitHub/2021-RV-Case-Competition-Team-2/pages/movies/index.vue",
+    "component": "/Users/ncolberg/Desktop/2021-RV-Case-Competition-Team-2/pages/movies/index.vue",
     "chunkName": "pages/movies/index",
-    "_name": "_713be8cc"
+    "_name": "_f4867e48"
   },
   {
     "name": "search",
     "path": "/search",
-    "component": "/Users/nsantini/Documents/GitHub/2021-RV-Case-Competition-Team-2/pages/search/index.vue",
+    "component": "/Users/ncolberg/Desktop/2021-RV-Case-Competition-Team-2/pages/search/index.vue",
     "chunkName": "pages/search/index",
-    "_name": "_c370a61e"
+    "_name": "_9a6ef5fe"
   },
   {
     "name": "tv",
     "path": "/tv",
-    "component": "/Users/nsantini/Documents/GitHub/2021-RV-Case-Competition-Team-2/pages/tv/index.vue",
+    "component": "/Users/ncolberg/Desktop/2021-RV-Case-Competition-Team-2/pages/tv/index.vue",
     "chunkName": "pages/tv/index",
-    "_name": "_93f0576a"
+    "_name": "_4057345b"
   },
   {
     "name": "findmovie-MovieListingFine",
     "path": "/findmovie/MovieListingFine",
-    "component": "/Users/nsantini/Documents/GitHub/2021-RV-Case-Competition-Team-2/pages/findmovie/MovieListingFine.vue",
+    "component": "/Users/ncolberg/Desktop/2021-RV-Case-Competition-Team-2/pages/findmovie/MovieListingFine.vue",
     "chunkName": "pages/findmovie/MovieListingFine",
-    "_name": "_88702f28"
+    "_name": "_a0b53708"
   },
   {
     "name": "findmovie-TVShow",
     "path": "/findmovie/TVShow",
-    "component": "/Users/nsantini/Documents/GitHub/2021-RV-Case-Competition-Team-2/pages/findmovie/TVShow.vue",
+    "component": "/Users/ncolberg/Desktop/2021-RV-Case-Competition-Team-2/pages/findmovie/TVShow.vue",
     "chunkName": "pages/findmovie/TVShow",
-    "_name": "_ac509246"
+    "_name": "_630e06ed"
   },
   {
     "name": "movies-MovieListing",
     "path": "/movies/MovieListing",
-    "component": "/Users/nsantini/Documents/GitHub/2021-RV-Case-Competition-Team-2/pages/movies/MovieListing.vue",
+    "component": "/Users/ncolberg/Desktop/2021-RV-Case-Competition-Team-2/pages/movies/MovieListing.vue",
     "chunkName": "pages/movies/MovieListing",
-    "_name": "_7b08fd6c"
+    "_name": "_19ea773a"
   },
   {
     "name": "tv-TVShows",
     "path": "/tv/TVShows",
-    "component": "/Users/nsantini/Documents/GitHub/2021-RV-Case-Competition-Team-2/pages/tv/TVShows.vue",
+    "component": "/Users/ncolberg/Desktop/2021-RV-Case-Competition-Team-2/pages/tv/TVShows.vue",
     "chunkName": "pages/tv/TVShows",
-    "_name": "_350641ed"
+    "_name": "_68fdddfd"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/Users/nsantini/Documents/GitHub/2021-RV-Case-Competition-Team-2/pages/index.vue",
+    "component": "/Users/ncolberg/Desktop/2021-RV-Case-Competition-Team-2/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_257bc7fc"
+    "_name": "_85d23c28"
   }
 ]
