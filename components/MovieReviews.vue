@@ -1,15 +1,15 @@
 <template>
- <div class='movieList container'>
+ <div class='movieList'>
     <h3>Latest Reviews</h3>
     <div class="movieListing row">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
             <div v-for="review in reviews" :key="review.id" class="review row">
-                <div class="col-md-1">
+                <div class="col-md-2">
                     <div class="avatar">
                         <img v-bind:src="formatImgPath(review.author_details.avatar_path)">
                     </div>
                 </div>
-                <div class="col-md-11">
+                <div class="col-md-10">
                     <b>By: {{review.author_details.username}}</b> | <a :href="review.url" target="_blank">Full Review</a> | Rating: <b>{{review.author_details.rating}}</b>
                     <br> 
                     {{review.content}}
@@ -113,8 +113,13 @@ img {
     cursor:pointer;
 }
 .avatar img {
+    margin: 0 auto;
+    display: block;
     border-radius: 50%;
     border: 1px solid #000;
+    width: 100%;
+    max-width: 100px;
+
 }
 .review {
     margin-bottom: 5px;
