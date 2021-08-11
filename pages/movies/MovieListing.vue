@@ -121,8 +121,6 @@ export default {
         axios.get(videosString).then(response => this.videos= response.data.results);
         console.log(movieId);
         axios.get(movieString).then(response => { this.movie = response.data });
-        const title = this.movie.title
-        document.title = title
     } catch {
         console.log("ERROR IN SEARCH");
     }

@@ -14,6 +14,42 @@
                         <div class="tvImage text-center">
                             <img v-bind:src="'http://image.tmdb.org/t/p/w500/' + tv.poster_path">
                         </div>
+                        <h6><span v-if="providers_fr">STREAM</span></h6>
+                        <div class="row">
+                            <div v-for="provider in providers_fr" :key="provider.logo_path">
+                                <div class="row">
+                                    <div class="col-md col-md col-md">
+                                        <a href="#" class="affiliateLink">
+                                            <img class="img-thumbnail service" v-bind:src="'http://image.tmdb.org/t/p/w200/' + provider.logo_path">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h6><span v-if="providers_rent">RENT</span></h6>
+                        <div class="row">
+                            <div v-for="provider in providers_rent" :key="provider.logo_path">
+                                <div class="row">
+                                    <div class="col-md">
+                                        <a href="#" class="affiliateLink">
+                                            <img class="img-thumbnail service" v-bind:src="'http://image.tmdb.org/t/p/w200/' + provider.logo_path">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h6><span v-if="providers_fr_buy">STREAM + BUY</span></h6>
+                        <div class="row">
+                            <div v-for="provider in providers_fr_buy" :key="provider.logo_path">
+                                <div class="row">
+                                    <div class="col-md">
+                                        <a href="#" class="affiliateLink">
+                                            <img class="img-thumbnail service" v-bind:src="'http://image.tmdb.org/t/p/w200/' + provider.logo_path">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-md-9 col-sm-12">
                         <div class="row">
@@ -68,7 +104,11 @@ export default {
     try {
         let tvId = this.$route.query.tvId;
         let tvString = 'https://api.themoviedb.org/3/tv/' + tvId + '?api_key=9d58e9e21ea356358536de769ffa2e06';
+        let providerString = 'https://api.themoviedb.org/3/tv/' + tvId + '/watch/providers?api_key=9d58e9e21ea356358536de769ffa2e06';
+        let videosString = 'https://api.themoviedb.org/3/tv/' + tvId + '/videos?api_key=9d58e9e21ea356358536de769ffa2e06&language=en-US'
         console.log(tvId);
+        axios.get(providerString).then(response => { this.providers_fr = response.data.results["US"]["flatrate"],  this.providers_fr_buy = response.data.results["US"]["flatrate_and_buy"], this.providers_rent = response.data.results["US"]["rent"]});
+        axios.get(videosString).then(response => this.videos= response.data.results);
         axios.get(tvString).then(response => { this.tv = response.data });
     } catch {
         console.log("ERROR IN SEARCH");
@@ -159,5 +199,8 @@ img {
     display: block;
     width:100%;
     max-width: 205px;
+}
+.service{
+    height: 60px;
 }
 </style>
