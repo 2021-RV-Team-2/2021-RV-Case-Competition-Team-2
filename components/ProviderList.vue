@@ -70,8 +70,11 @@ export default {
    },
    provClick(value) {
        try {
-        axios.get('https://api.themoviedb.org/3/discover/movie?api_key=9d58e9e21ea356358536de769ffa2e06&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate' + '&with_watch_providers=' + value).then(response => { this.movieList = response.data.results.slice(0,5) })
+        var apiCall = 'https://api.themoviedb.org/3/discover/movie?api_key=9d58e9e21ea356358536de769ffa2e06&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate' + '&with_watch_providers=' + value
+        console.log(apiCall)
+        axios.get(apiCall).then(response => { this.movieList = response.data.results.slice(0,5) })
         console.log(this.movieList)
+        
     } catch {
         console.log("ERROR IN SEARCH");
     }
@@ -119,5 +122,44 @@ img {
     width:100%;
     float: none;
 }
-
+.movie {
+    max-height: 300px;
+    padding:10px;
+    padding-bottom:20px;
+    color:#000;
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom:10px;
+    overflow-x: hidden;
+    font-size: 12px;
+}
+.movieYear, .movieRating {
+    color: red;
+    font-weight: bold;
+}
+.movieYear {
+    float: left;
+}
+.movieRating {
+    float: right;
+}
+.movieDescription {
+    height: 100px;
+    overflow-y:scroll;
+    width:100%;
+    float: none;
+}
+.learnMore {
+    background: red;
+    color: white;
+    padding: 5px;
+    border-radius: 4px;
+    margin-top:20px;
+    display:block;
+    width: 74px;
+}
+.learnMore:hover {
+    cursor:pointer;
+    color: #fff;
+}
 </style>
