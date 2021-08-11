@@ -58,7 +58,7 @@ export default {
     formatImgPath (value) {
         console.log(value);
       const tmdbPath = 'http://image.tmdb.org/t/p/w500/'
-      if (value.startsWith('/http')){
+      if (value != null && value.startsWith('/http')){
           return value.replace("/", "");
       } else {
           return tmdbPath + value;

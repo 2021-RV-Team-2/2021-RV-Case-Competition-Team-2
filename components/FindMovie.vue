@@ -157,20 +157,32 @@ export default {
             genresVals = genresVals + "&with_runtime.lte=" + this.runtime
         }
         
-        var ran = Math.floor(Math.random() * 10);
-
         var lengths = this.movTV.length;
         var movTv = 0
         console.log(this.movTV)
         if (lengths == 0 || lengths == 2) {
-            movTv = Math.floor(Math.random() * 2 + 1);       
-        } 
-        if (this.movTV[0] == 1) {
+            movTv = Math.floor(Math.random() * 2 + 1);     
+        } else if (lengths == 1 && this.movTV[0] == 1) {
             movTv = 1
-            var apiCall = "https://api.themoviedb.org/3/discover/movie?api_key=9d58e9e21ea356358536de769ffa2e06&language=en-US&sort_by=popularity.asc&vote_count.gte=20&include_adult=false&include_video=false&page=1" + genresVals  
         } else {
             movTv = 2
-            var apiCall = "https://api.themoviedb.org/3/discover/tv?api_key=9d58e9e21ea356358536de769ffa2e06&language=en-US&sort_by=popularity.asc&vote_count.gte=20&include_adult=false&include_video=false&page=1" + genresVals  
+        }
+        if (movTv == 1) {
+            if (this.year2 != null && this.year2 != "")  {
+                genresVals = genresVals + "&release_date.lte=" + this.year2 + "-12-31"
+            }
+            if (this.year1 != null && this.year1 != "")  {
+                genresVals = genresVals + "&release_date.gte=" + this.year1 + "-01-01"
+            }
+            var apiCall = "https://api.themoviedb.org/3/discover/movie?api_key=9d58e9e21ea356358536de769ffa2e06&language=en-US&vote_count.gte=20&include_adult=false&include_video=false&page=1" + genresVals  
+        } else {
+            if (this.year2 != null && this.year2 != "")  {
+                genresVals = genresVals + "&air_date.lte=" + this.year2 + "-12-31"
+            }
+            if (this.year1 != null && this.year1 != "")  {
+                genresVals = genresVals + "&air_date.gte=" + this.year1 + "-01-01"
+            }
+            var apiCall = "https://api.themoviedb.org/3/discover/tv?api_key=9d58e9e21ea356358536de769ffa2e06&language=en-US&vote_count.gte=20&include_adult=false&include_video=false&page=1" + genresVals  
         }
 
         console.log(apiCall)
@@ -178,6 +190,7 @@ export default {
             axios.get(apiCall).then(
                 (response) => {
                     console.log(apiCall)
+                    var ran = Math.floor(Math.random() * response.data.results.length);
                     this.pickedMovies = response.data.results[ran];
                     // alert('Hello ' + this.pickedMovies.id + '! ' + this.pickedMovies.name + this.pickedMovies.title);
                     if (movTv == 2 ) {
