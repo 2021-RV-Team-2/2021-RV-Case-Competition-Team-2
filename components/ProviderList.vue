@@ -3,28 +3,11 @@
     <!--<Search/>-->
     <h1 @click="ProviderList()">Provider List</h1>
     <div class="latestProviders row">
-        <div v-for="Provider in latestProviders" :key="Provider.id" class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
-            <div class="Provider">
-                <div class="ProviderName text-truncate">
-                    <h3>{{Provider.name}}</h3>
-                </div>
-                <div class="row">
-                    <div class="col-md-3 col-sm-12">
-                        <div class="ProviderImage text-center">
-                            <img v-bind:src="'http://image.tmdb.org/t/p/w500/' + Provider.poster_path">
-                        </div>
-                    </div>
-                    <div class="col-md-9 col-sm-12">
-                        <div class="ProviderYear">
-                            {{ Provider.release_date }}
-                        </div>
-                        <div class="ProviderDescription">
-                            {{ Provider.overview }}
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+        <div v-for="serv in latestProviders" :key="serv.provider_name" class="switch" >
+             <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" :id="serv.provider_name"  v-on:click="provClick(serv.provider_id)" >
+                <label class="custom-control-label" :for="serv.provider_name">{{serv.provider_name}}</label>
+             </div>
         </div>
     </div>
  </div>
@@ -42,17 +25,26 @@ export default {
   return {
    query: '',
    results: '',
-   latestProviders: ''
+   latestProviders: '',
+   movieList: ''
   }
  },
  methods: {
    ProviderList() {
     try {
-        axios.get('https://api.themoviedb.org/3/watch/providers/tv?api_key=9d58e9e21ea356358536de769ffa2e06').then(response => { this.latestProviders = response.data.results })
+        axios.get('https://api.themoviedb.org/3/watch/providers/tv?api_key=9d58e9e21ea356358536de769ffa2e06&language=en-US&watch_region=US').then(response => { this.latestProviders = response.data.results.slice(0,8) })
     } catch {
         console.log("ERROR IN SEARCH");
     }
-   }
+   },
+   provClick() {
+       try {
+        axios.get('https://api.themoviedb.org/3/discover/movie?api_key=9d58e9e21ea356358536de769ffa2e06&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_providers=9&with_watch_monetization_types=flatrate').then(response => { this.movieList = response.data.results.slice(0,2) })
+        console.log(this.movieList)
+    } catch {
+        console.log("ERROR IN SEARCH");
+    }
+   },
  },
  mounted () {
     this.ProviderList();
@@ -69,7 +61,7 @@ html, body {
 img {
     max-width:100%;
 }
-.provider {
+.custom-control-label {
     max-height: 300px;
     padding:10px;
     padding-bottom:20px;
