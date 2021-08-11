@@ -2,7 +2,7 @@
  <div class='tvList container'>
         <div class="findMovieForm">
             <div class="row">
-                <div class="col-md-10 col-sm-12">
+                <div class="col-md-10">
                     <div class="findMe text-truncate mb-2">
                         <h5>FIND ME A</h5>
                     </div>
@@ -192,9 +192,9 @@ export default {
                     this.pickedMovies = response.data.results[ran];
                     // alert('Hello ' + this.pickedMovies.id + '! ' + this.pickedMovies.name + this.pickedMovies.title);
                     if (movTv == 2 ) {
-                       window.location.href = "/findmovie/tvshow?tvId=" + this.pickedMovies.id 
+                       window.location.href = "/tv/tvshows?tvId=" + this.pickedMovies.id 
                     } else if (movTv == 1 ) {
-                       window.location.href = "/findmovie/MovieListing?movieId=" + this.pickedMovies.id
+                       window.location.href = "/movies/MovieListing?movieId=" + this.pickedMovies.id
                     } 
                 },
             )
@@ -321,7 +321,7 @@ switch to violet when it is active*/
     color: white;
     padding: 5px;
     border-radius: 4px;
-    display:block;
+    /* display:block; */
     width: 90px;
     height: 35px;
 }
@@ -330,7 +330,7 @@ switch to violet when it is active*/
     color: white;
     padding: 5px;
     border-radius: 4px;
-    display:block;
+    /* display:block; */
     width: 224px;
     height: 35px;
 }
@@ -339,7 +339,7 @@ switch to violet when it is active*/
     color: white;
     padding: 5px;
     border-radius: 4px;
-    display:block;
+    /* display:block; */
     width: 70px;
     height: 35px;
 }
@@ -348,7 +348,7 @@ switch to violet when it is active*/
     color: white;
     padding: 5px;
     border-radius: 4px;
-    display:block;
+    /* display:block; */
     width: 150px;
     height: 35px;
 }
@@ -359,7 +359,7 @@ switch to violet when it is active*/
     border-radius: 4px;
     margin-top:20px;
     margin-bottom:5px;
-    display:block;
+    /* display:block; */
     width: 120px;
 }
 

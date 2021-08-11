@@ -2,8 +2,14 @@
   "FindMovie": {
     "description": "Auto imported from components/FindMovie.vue"
   },
+  "FindMovieHome": {
+    "description": "Auto imported from components/FindMovieHome.vue"
+  },
   "HomeBanner": {
     "description": "Auto imported from components/HomeBanner.vue"
+  },
+  "HomeCarousel": {
+    "description": "Auto imported from components/HomeCarousel.vue"
   },
   "HomeMovieList": {
     "description": "Auto imported from components/HomeMovieList.vue"
