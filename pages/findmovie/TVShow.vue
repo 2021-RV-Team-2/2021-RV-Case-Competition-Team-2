@@ -43,6 +43,7 @@
             </div>
         </div>
     </div>
+    <NuxtLink class="tryagain" :to="{path: '/findmovie/' }">Try Finder Again</NuxtLink>
  </div>
 </template>
 <script>
@@ -159,5 +160,20 @@ img {
     display: block;
     width:100%;
     max-width: 205px;
+}
+.tryagain {
+    background: #D1495B;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top:20px;
+    margin-bottom:5px;
+    margin-left:10px;
+    display:block;
+    width: 140px;
+}
+.tryagain:hover {
+    cursor:pointer;
+    color: #fff;
 }
 </style>

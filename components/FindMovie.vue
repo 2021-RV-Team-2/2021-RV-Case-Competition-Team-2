@@ -194,7 +194,7 @@ export default {
                     this.pickedMovies = response.data.results[ran];
                     // alert('Hello ' + this.pickedMovies.id + '! ' + this.pickedMovies.name + this.pickedMovies.title);
                     if (movTv == 2 ) {
-                       window.location.href = "/findmovie/tvshow?tvId=" + this.pickedMovies.id
+                       window.location.href = "/findmovie/tvshow?tvId=" + this.pickedMovies.id 
                     } else if (movTv == 1 ) {
                        window.location.href = "/findmovie/MovieListing?movieId=" + this.pickedMovies.id
                     } 
@@ -346,7 +346,7 @@ switch to violet when it is active*/
     border-radius: 4px;
     margin-top:20px;
     display:block;
-    width: 90px;
+    width: 70px;
     margin-bottom:5px;
 }
 .runtime {
@@ -357,7 +357,7 @@ switch to violet when it is active*/
     margin-top:20px;
     margin-bottom:5px;
     display:block;
-    width: 205px;
+    width: 150px;
 }
 .searchButton {
     background: #D1495B;
@@ -367,7 +367,7 @@ switch to violet when it is active*/
     margin-top:20px;
     margin-bottom:5px;
     display:block;
-    width: 205px;
+    width: 120px;
 }
 
 h1 {
