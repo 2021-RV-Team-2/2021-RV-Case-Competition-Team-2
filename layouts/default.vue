@@ -13,8 +13,8 @@
             <li class="nav-item text-secondary px-4">
                <NuxtLink class="nav-link" to="/tv">TV SHOWS</NuxtLink>
             </li>
-            <li class="nav-item px-4">
-                <NuxtLink class="nav-link" to="/">PROVIDERS</NuxtLink>
+            <li class="nav-item">
+                 <NuxtLink class="nav-link" to="/providers">PROVIDERS</NuxtLink>
             </li>
             <li class="nav-item text-secondary px-4">
                <NuxtLink class="nav-link" to="/findmovie">FINDER</NuxtLink>
