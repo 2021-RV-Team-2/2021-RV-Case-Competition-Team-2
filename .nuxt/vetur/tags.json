@@ -1,4 +1,7 @@
 {
+  "FindMovie": {
+    "description": "Auto imported from components/FindMovie.vue"
+  },
   "HomeBanner": {
     "description": "Auto imported from components/HomeBanner.vue"
   },
@@ -11,6 +14,9 @@
   "MovieList": {
     "description": "Auto imported from components/MovieList.vue"
   },
+  "MovieReviews": {
+    "description": "Auto imported from components/MovieReviews.vue"
+  },
   "NuxtLogo": {
     "description": "Auto imported from components/NuxtLogo.vue"
   },
@@ -19,6 +25,9 @@
   },
   "TVList": {
     "description": "Auto imported from components/TVList.vue"
+  },
+  "TVReviews": {
+    "description": "Auto imported from components/TVReviews.vue"
   },
   "Tutorial": {
     "description": "Auto imported from components/Tutorial.vue"

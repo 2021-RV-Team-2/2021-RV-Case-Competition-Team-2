@@ -16,8 +16,8 @@
             <li class="nav-item px-4">
                 <NuxtLink class="nav-link" to="/">PROVIDERS</NuxtLink>
             </li>
-            <li class="nav-item px-4">
-                <NuxtLink class="nav-link" to="/">NEWS</NuxtLink>
+            <li class="nav-item text-secondary px-4">
+               <NuxtLink class="nav-link" to="/findmovie">FINDER</NuxtLink>
             </li>
             </ul>
         </div>
@@ -67,7 +67,7 @@
                 <NuxtLink to="/">PROVIDERS</NuxtLink>
             </p>
             <p>
-                <NuxtLink to="/watch">WHAT TO WATCH</NuxtLink>
+                <NuxtLink to="/findmovie">FIND A FILM</NuxtLink>
             </p>
             </div>
             <!-- Grid column -->
@@ -162,5 +162,10 @@ h6{
 .links{
     position: relative;
     left: -100px;
+}
+@media screen and (max-width: 992px) {
+  ul {
+    margin-left: 80px!important;
+  }
 }
 </style>
