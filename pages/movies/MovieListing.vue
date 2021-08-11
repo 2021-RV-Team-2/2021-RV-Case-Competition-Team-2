@@ -11,6 +11,42 @@
                         <div class="movieImage text-center">
                             <img v-bind:src="'http://image.tmdb.org/t/p/w500/' + movie.poster_path">
                         </div>
+                        <h6 v-if="providers_fr">STREAM</h6>
+                        <div class="row">
+                            <div v-for="provider in providers_fr" :key="provider.logo_path">
+                                <div class="row">
+                                    <div class="col-md">
+                                        <a href="#" class="affiliateLink">
+                                            <img class="img-thumbnail service" v-bind:src="'http://image.tmdb.org/t/p/w200/' + provider.logo_path">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h6><span v-if="providers_rent">RENT</span></h6>
+                        <div class="row">
+                            <div v-for="provider in providers_rent" :key="provider.logo_path">
+                                <div class="row">
+                                    <div class="col-md">
+                                        <a href="#" class="affiliateLink">
+                                            <img class="img-thumbnail service" v-bind:src="'http://image.tmdb.org/t/p/w200/' + provider.logo_path">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h6 v-if="providers_fr_buy">STREAM + BUY</h6>
+                        <div class="row">
+                            <div v-for="provider in providers_fr_buy" :key="provider.logo_path">
+                                <div class="row">
+                                    <div class="col-md">
+                                        <a href="#" class="affiliateLink">
+                                            <img class="img-thumbnail service" v-bind:src="'http://image.tmdb.org/t/p/w200/' + provider.logo_path">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-md-9 col-sm-12">
                         <div class="row">
@@ -38,24 +74,6 @@
                             </div>
                         </div>
                         <div class="col-md-12 col-sm-12">
-                            <h6 v-if="providers_fr">STREAM</h6>
-                            <div v-for="provider in providers_fr" :key="provider.logo_path">
-                                <a href="#" class="affiliateLink">
-                                    <img class="img-thumbnail service" v-bind:src="'http://image.tmdb.org/t/p/w200/' + provider.logo_path">
-                                </a>
-                            </div>
-                            <h6 v-if="providers_fr_buy">STREAM + BUY</h6>
-                            <div v-for="provider in providers_fr_buy" :key="provider.logo_path">
-                                <a href="#" class="affiliateLink">
-                                    <img class="img-thumbnail service" v-bind:src="'http://image.tmdb.org/t/p/w200/' + provider.logo_path">
-                                </a>
-                            </div>
-                            <h6><span v-if="providers_rent">RENT</span></h6>
-                            <div v-for="provider in providers_rent" :key="provider.logo_path">
-                                <a href="#" class="affiliateLink">
-                                    <img class="img-thumbnail service" v-bind:src="'http://image.tmdb.org/t/p/w200/' + provider.logo_path">
-                                </a>
-                            </div>
                             <div v-if="videos" class="trailer">
                                 <h3>Trailer</h3>
                                 <div class="iframe-container">
@@ -76,9 +94,6 @@ import axios from 'axios'
 // import Search from '@/components/Search'
 export default {
  name: 'movieListing',
- head: {
-    title: 'Movies',
- },
  components: {
     // Search
  },
@@ -106,6 +121,8 @@ export default {
         axios.get(videosString).then(response => this.videos= response.data.results);
         console.log(movieId);
         axios.get(movieString).then(response => { this.movie = response.data });
+        const title = this.movie.title
+        document.title = title
     } catch {
         console.log("ERROR IN SEARCH");
     }
