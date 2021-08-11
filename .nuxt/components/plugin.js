@@ -9,6 +9,7 @@ const components = {
   MovieList: () => import('../../components/MovieList.vue' /* webpackChunkName: "components/movie-list" */).then(c => wrapFunctional(c.default || c)),
   MovieReviews: () => import('../../components/MovieReviews.vue' /* webpackChunkName: "components/movie-reviews" */).then(c => wrapFunctional(c.default || c)),
   NuxtLogo: () => import('../../components/NuxtLogo.vue' /* webpackChunkName: "components/nuxt-logo" */).then(c => wrapFunctional(c.default || c)),
+  ProviderList: () => import('../../components/ProviderList.vue' /* webpackChunkName: "components/provider-list" */).then(c => wrapFunctional(c.default || c)),
   Search: () => import('../../components/Search.vue' /* webpackChunkName: "components/search" */).then(c => wrapFunctional(c.default || c)),
   TVList: () => import('../../components/TVList.vue' /* webpackChunkName: "components/t-v-list" */).then(c => wrapFunctional(c.default || c)),
   TVReviews: () => import('../../components/TVReviews.vue' /* webpackChunkName: "components/t-v-reviews" */).then(c => wrapFunctional(c.default || c)),

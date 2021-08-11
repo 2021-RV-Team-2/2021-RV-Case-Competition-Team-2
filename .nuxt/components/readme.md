@@ -13,6 +13,7 @@ You can directly use them in pages and other components without the need to impo
 - `<MovieList>` | `<movie-list>` (components/MovieList.vue)
 - `<MovieReviews>` | `<movie-reviews>` (components/MovieReviews.vue)
 - `<NuxtLogo>` | `<nuxt-logo>` (components/NuxtLogo.vue)
+- `<ProviderList>` | `<provider-list>` (components/ProviderList.vue)
 - `<Search>` | `<search>` (components/Search.vue)
 - `<TVList>` | `<t-v-list>` (components/TVList.vue)
 - `<TVReviews>` | `<t-v-reviews>` (components/TVReviews.vue)
