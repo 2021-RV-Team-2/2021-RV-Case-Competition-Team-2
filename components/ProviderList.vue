@@ -70,7 +70,7 @@ export default {
    },
    provClick(value) {
        try {
-        var apiCall = 'https://api.themoviedb.org/3/discover/movie?api_key=9d58e9e21ea356358536de769ffa2e06&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate' + '&with_watch_providers=' + value
+        var apiCall = 'https://api.themoviedb.org/3/discover/movie?api_key=9d58e9e21ea356358536de769ffa2e06&language=en-US&watch_region=US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate' + '&with_watch_providers=' + value
         console.log(apiCall)
         axios.get(apiCall).then(response => { this.movieList = response.data.results.slice(0,5) })
         console.log(this.movieList)
