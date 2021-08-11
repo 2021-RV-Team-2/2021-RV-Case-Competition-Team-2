@@ -2,7 +2,7 @@
  <div class='tvList container'>
         <div class="findMovieForm">
             <div class="row">
-                <div class="col-md-10">
+                <div class="col-md-">
                     <div class="findMe text-truncate mb-2">
                         <h5>FIND ME A</h5>
                     </div>
@@ -342,6 +342,11 @@ switch to violet when it is active*/
     /* display:block; */
     width: 70px;
     height: 35px;
+}
+.tvList {
+    max-height: 310px;
+    display: block;
+    overflow-y: scroll;
 }
 .runtime {
     background: #D1495B;
