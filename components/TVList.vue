@@ -33,6 +33,12 @@
             </div>
         </div>
     </div>
+    <div class="pagination">
+        <div class="btnContainer">
+            <button @click="prevPage()" class="learnMore">Prev.</button>
+            <button @click="nextPage()" class="learnMore">Next.</button>
+        </div>
+    </div>
  </div>
 </template>
 <script>
@@ -49,13 +55,15 @@ export default {
   return {
    query: '',
    results: '',
-   latestTV: ''
+   latestTV: '',
+   page: 1
   }
  },
  methods: {
    tvList() {
     try {
-        axios.get('https://api.themoviedb.org/3/discover/tv?api_key=9d58e9e21ea356358536de769ffa2e06&language=en-US&vote_count.gte=20&page=1').then(response => { this.latestTV = response.data.results })
+        let page = this.page;
+        axios.get('https://api.themoviedb.org/3/discover/tv?api_key=9d58e9e21ea356358536de769ffa2e06&language=en-US&vote_count.gte=20&page='+page).then(response => { this.latestTV = response.data.results })
     } catch {
         console.log("ERROR IN SEARCH");
     }
@@ -63,6 +71,16 @@ export default {
    formatYear(value) {
         return String(value).substring(0,4)
     },
+   nextPage() {
+       this.page++;
+       this.tvList();
+   },
+   prevPage() {
+       if (this.page > 1) {
+        this.page--;
+        this.tvList();
+       }
+   }
  },
  mounted () {
     this.tvList();
@@ -122,5 +140,17 @@ img {
 h1 {
     font-family: "Montserrat";
     letter-spacing: .1rem;
+}
+.pagination {
+    width:100%;
+    display:block;
+}
+.pagination button {
+    display: inline-block;
+}
+.pagination .btnContainer {
+    width:155px;
+    display:block;
+    margin:0 auto;
 }
 </style>
