@@ -3,62 +3,68 @@
     <!--<Search/>-->
     <h1 @click="genreList()" class="py-4 mx-auto text-center">FIND SOMETHING TO WATCH</h1>
         <div class="findMovieForm">
-            <div class="findMe text-truncate">
-                <h5>FIND ME A</h5>
-            </div>
             <div class="row">
-                <div class="col-sm">
-                    <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" id="movie" v-on:click="movTVclick(1)">
-                        <label class="custom-control-label" for="movie">Movie</label>
+                <div class="col-md-6 col-sm-12">
+                    <div class="findMe text-truncate">
+                        <h5>FIND ME A</h5>
                     </div>
-                </div>
-                <div class="col-sm">
-                    <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" id="tv" v-on:click="movTVclick(2)">
-                        <label class="custom-control-label" for="tv">TV Show</label>
+                    <div class="switch">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="movie" v-on:click="movTVclick(1)">
+                            <label class="custom-control-label" for="movie">Movie</label>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="genre text-truncate">
-                <h5>GENRES</h5>
-            </div>
-            <div class="row">
-                <div v-for="genre in genres" :key="genre.id" class="col-sm">
-                    <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" :id="genre.id" v-on:click="genreClick(genre.id)">
-                        <label class="custom-control-label" :for="genre.id">{{genre.name}}</label>
+                    <div class="switch">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="tv" v-on:click="movTVclick(2)">
+                            <label class="custom-control-label" for="tv">TV Show</label>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="stream text-truncate">
-                <h5>STREAMING SERVICES</h5>
-            </div>
             <div class="row">
-                <div v-for="serv in services" :key="serv.provider_name" class="col-sm" >
-                    <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" :id="serv.provider_name"  v-on:click="serverClick(serv.provider_id)" >
-                        <label class="custom-control-label" :for="serv.provider_name">{{serv.provider_name}}</label>
+                <div class="col-md-6 col-sm-12">
+                    <div class="genre text-truncate">
+                        <h5>GENRES</h5>
+                    </div>
+                    <div v-for="genre in genres" :key="genre.id" class="switch">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" :id="genre.id" v-on:click="genreClick(genre.id)">
+                            <label class="custom-control-label" :for="genre.id">{{genre.name}}</label>
+                        </div>
                     </div>
                 </div>
-            </div>
-           
-            <div class="year text-truncate">
-                <h5>YEAR</h5>
-            </div>
-            <div class="row" >
-                <div class="col-sm">
-                    <input v-model="year1" @keypress="isNumber($event)">
-                    <h8> TO </h8>
-                    <input v-model="year2" @keypress="isNumber($event)">
+                <div class="col-md-6 col-sm-12">
+                    <div class="stream text-truncate">
+                        <h5>STREAMING SERVICES</h5>
+                    </div>
+                    <div v-for="serv in services" :key="serv.provider_name" class="switch" >
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" :id="serv.provider_name"  v-on:click="serverClick(serv.provider_id)" >
+                            <label class="custom-control-label" :for="serv.provider_name">{{serv.provider_name}}</label>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="runtime text-truncate">
-                <h5>MAX RUNTIME</h5>
-            </div>
-            <div class="row">
-                <div class="col-sm">
-                    <input v-model="runtime" @keypress="isNumber($event)"> Minutes
+           </div>
+           <div class="row" >
+               <div class="col-md-6 col-sm-12">
+                    <div class="year text-truncate">
+                        <h5>YEAR</h5>
+                    </div>
+                
+                    <div class="">
+                        <input v-model="year1" @keypress="isNumber($event)">
+                        <h8> TO </h8>
+                        <input v-model="year2" @keypress="isNumber($event)">
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="runtime text-truncate">
+                        <h5>MAX RUNTIME</h5>
+                    </div>
+                    <div class="">
+                        <input v-model="runtime" @keypress="isNumber($event)"> Minutes
+                    </div>
                 </div>
             </div>
         </div>
@@ -240,6 +246,13 @@ export default {
 }
 </script>
 <style scope>
+* {
+    outline: none;
+}
+.switch {
+    display:inline-block;
+    width: 33%;
+}
 html, body {
     background: #000!important;
     color: #fff!important;
@@ -345,5 +358,14 @@ switch to violet when it is active*/
 h1 {
     font-family: "Montserrat";
     letter-spacing: .1rem;
+}
+
+label {
+    margin-right: 5px;
+    vertical-align: baseline;
+    width: 100%;
+}
+label::before, label::after {
+    margin-top:-3px;
 }
 </style>
